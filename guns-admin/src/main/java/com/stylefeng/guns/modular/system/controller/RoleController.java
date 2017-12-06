@@ -64,7 +64,7 @@ public class RoleController extends BaseController {
      */
     @RequestMapping("")
     public String index() {
-        return PREFIX + "/role";
+        return PREFIX + "/role.html";
     }
 
     /**
@@ -72,7 +72,7 @@ public class RoleController extends BaseController {
      */
     @RequestMapping(value = "/role_add")
     public String roleAdd() {
-        return PREFIX + "/role_add";
+        return PREFIX + "/role_add.html";
     }
 
     /**
@@ -89,7 +89,7 @@ public class RoleController extends BaseController {
         model.addAttribute("pName", ConstantFactory.me().getSingleRoleName(role.getPid()));
         model.addAttribute("deptName", ConstantFactory.me().getDeptName(role.getDeptid()));
         LogObjectHolder.me().set(role);
-        return PREFIX + "/role_edit";
+        return PREFIX + "/role_edit.html";
     }
 
     /**
@@ -103,7 +103,7 @@ public class RoleController extends BaseController {
         }
         model.addAttribute("roleId", roleId);
         model.addAttribute("roleName", ConstantFactory.me().getSingleRoleName(roleId));
-        return PREFIX + "/role_assign";
+        return PREFIX + "/role_assign.html";
     }
 
     /**

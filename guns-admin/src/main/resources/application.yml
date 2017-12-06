@@ -38,7 +38,6 @@ spring:
     static-path-pattern: /static/**
     view:
       prefix: /WEB-INF/view
-      suffix: .html
   http:
     converters:
       preferred-json-mapper: fastjson
