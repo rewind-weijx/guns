@@ -20,3 +20,12 @@ logs/
 
 *velocity.log*
 
+/guns-admin/target/
+
+/guns-core/target/
+
+/guns-rest/target/
+
+/guns-admin/target/classes/META-INF/maven/com.stylefeng/guns-admin/pom.properties
+/guns-core/target/classes/META-INF/maven/com.stylefeng/guns-core/pom.properties
+/guns-rest/target/classes/META-INF/maven/com.stylefeng.guns/guns-rest/pom.properties
