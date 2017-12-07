@@ -2,7 +2,7 @@ package com.stylefeng.guns.modular.system.warpper;
 
 import com.stylefeng.guns.common.constant.factory.ConstantFactory;
 import com.stylefeng.guns.common.constant.state.IsMenu;
-import com.stylefeng.guns.core.base.warpper.BaseControllerWarpper;
+import com.stylefeng.guns.core.base.warpper.BaseWarpper;
 
 import java.util.List;
 import java.util.Map;
@@ -13,7 +13,7 @@ import java.util.Map;
  * @author fengshuonan
  * @date 2017年2月19日15:07:29
  */
-public class MenuWarpper extends BaseControllerWarpper {
+public class MenuWarpper extends BaseWarpper {
 
     public MenuWarpper(List<Map<String, Object>> list) {
         super(list);

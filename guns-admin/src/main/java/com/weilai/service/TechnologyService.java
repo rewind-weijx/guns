@@ -1,8 +1,8 @@
 package com.weilai.service;
 
-import com.baomidou.mybatisplus.service.IService;
+import com.stylefeng.guns.core.base.service.BaseService;
 import com.weilai.model.Technology;
 
-public interface TechnologyService extends IService<Technology> {
+public interface TechnologyService extends BaseService<Technology> {
 
 }

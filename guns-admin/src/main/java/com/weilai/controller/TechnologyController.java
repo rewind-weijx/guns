@@ -7,9 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.baomidou.mybatisplus.service.IService;
 import com.stylefeng.guns.core.base.controller.BaseController;
-import com.stylefeng.guns.modular.system.warpper.NoticeWrapper;
+import com.stylefeng.guns.core.base.warpper.BaseWarpper;
 import com.weilai.model.Technology;
 import com.weilai.service.TechnologyService;
 
@@ -21,8 +20,6 @@ public class TechnologyController extends BaseController{
 
 	@Autowired
 	private TechnologyService technologyService;
-	@Autowired
-	private IService<Technology> service ;
 	
 	
 	@RequestMapping("")
@@ -35,7 +32,7 @@ public class TechnologyController extends BaseController{
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(Technology technology) {
-        List<Technology> list = service.selectList(null);
-        return super.warpObject(new NoticeWrapper(list));
+    	List<Technology> list = technologyService.selectList(null);
+        return super.warpObject(new BaseWarpper(list));
     }
 }

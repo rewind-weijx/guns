@@ -1,5 +1,7 @@
 package com.weilai.service.impl;
 
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,8 +14,7 @@ import com.weilai.service.TechnologyService;
 @Transactional
 public class TechnologyServiceImpl extends ServiceImpl<TechnologyMapper, Technology> implements TechnologyService {
 
-//    @Resource
-//    private TechnologyMapper technologyMapper;
-
+	@Resource
+	TechnologyMapper technologyMapper;
     
 }

@@ -1,7 +1,7 @@
 package com.stylefeng.guns.modular.system.warpper;
 
 import com.stylefeng.guns.common.constant.factory.ConstantFactory;
-import com.stylefeng.guns.core.base.warpper.BaseControllerWarpper;
+import com.stylefeng.guns.core.base.warpper.BaseWarpper;
 
 import java.util.Map;
 
@@ -11,7 +11,7 @@ import java.util.Map;
  * @author fengshuonan
  * @date 2017年4月25日 18:10:31
  */
-public class NoticeWrapper extends BaseControllerWarpper {
+public class NoticeWrapper extends BaseWarpper {
 
     public NoticeWrapper(Object list) {
         super(list);

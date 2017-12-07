@@ -1,7 +1,7 @@
 /**
  * 通知管理初始化
  */
-var Technology = {
+var Notice = {
     id: "NoticeTable",	//表格id
     seItem: null,		//选中的条目
     table: null,
@@ -11,7 +11,7 @@ var Technology = {
 /**
  * 初始化表格的列
  */
-Technology.initColumn = function () {
+Notice.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
         {title: 'id', field: 'id', visible: false, align: 'center', valign: 'middle'},
@@ -25,13 +25,13 @@ Technology.initColumn = function () {
 /**
  * 检查是否选中
  */
-Technology.check = function () {
+Notice.check = function () {
     var selected = $('#' + this.id).bootstrapTable('getSelections');
     if (selected.length == 0) {
         Feng.info("请先选中表格中的某一记录！");
         return false;
     } else {
-        Technology.seItem = selected[0];
+        Notice.seItem = selected[0];
         return true;
     }
 };
@@ -39,14 +39,14 @@ Technology.check = function () {
 /**
  * 点击添加通知
  */
-Technology.openAddNotice = function () {
+Notice.openAddNotice = function () {
     var index = layer.open({
         type: 2,
         title: '添加通知',
         area: ['800px', '420px'], //宽高
         fix: false, //不固定
         maxmin: true,
-        content: Feng.ctxPath + '/technology/add'
+        content: Feng.ctxPath + '/notice/notice_add'
     });
     this.layerIndex = index;
 };
@@ -54,7 +54,7 @@ Technology.openAddNotice = function () {
 /**
  * 打开查看通知详情
  */
-Technology.openNoticeDetail = function () {
+Notice.openNoticeDetail = function () {
     if (this.check()) {
         var index = layer.open({
             type: 2,
@@ -62,7 +62,7 @@ Technology.openNoticeDetail = function () {
             area: ['800px', '420px'], //宽高
             fix: false, //不固定
             maxmin: true,
-            content: Feng.ctxPath + '/technology/update/' + Technology.seItem.id
+            content: Feng.ctxPath + '/notice/notice_update/' + Notice.seItem.id
         });
         this.layerIndex = index;
     }
@@ -71,36 +71,36 @@ Technology.openNoticeDetail = function () {
 /**
  * 删除通知
  */
-Technology.delete = function () {
+Notice.delete = function () {
     if (this.check()) {
 
         var operation = function(){
-            var ajax = new $ax(Feng.ctxPath + "/technology/delete", function (data) {
+            var ajax = new $ax(Feng.ctxPath + "/notice/delete", function (data) {
                 Feng.success("删除成功!");
-                Technology.table.refresh();
+                Notice.table.refresh();
             }, function (data) {
                 Feng.error("删除失败!" + data.responseJSON.message + "!");
             });
-            ajax.set("noticeId", Technology.seItem.id);
+            ajax.set("noticeId", Notice.seItem.id);
             ajax.start();
         };
 
-        Feng.confirm("是否删除通知 " + Technology.seItem.title + "?", operation);
+        Feng.confirm("是否删除通知 " + Notice.seItem.title + "?", operation);
     }
 };
 
 /**
  * 查询通知列表
  */
-Technology.search = function () {
+Notice.search = function () {
     var queryData = {};
     queryData['condition'] = $("#condition").val();
-    Technology.table.refresh({query: queryData});
+    Notice.table.refresh({query: queryData});
 };
 
 $(function () {
-    var defaultColunms = Technology.initColumn();
-    var table = new BSTable(Technology.id, "/technology/list", defaultColunms);
+    var defaultColunms = Notice.initColumn();
+    var table = new BSTable(Notice.id, "/notice/list", defaultColunms);
     table.setPaginationType("client");
-    Technology.table = table.init();
+    Notice.table = table.init();
 });
