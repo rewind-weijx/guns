@@ -25,7 +25,7 @@ public class BaseWarpper {
 		if (this.obj instanceof List) {
 			List<Object> list = (List<Object>) this.obj;
 			for (Object object : list) {
-				if (!object.getClass().equals(Map.class)) {
+				if (!(object instanceof Map)) {
 					warpTheMap(this.convertToMap(object));
 					continue;
 				}
