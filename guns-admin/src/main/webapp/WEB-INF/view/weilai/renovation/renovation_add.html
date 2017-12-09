@@ -1,0 +1,37 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="主键" underline="true"/>
+                            <#input id="type" name="装修类型：1：智能家居2：定制木门3：软装部" underline="true"/>
+                            <#input id="title" name="标题" underline="true"/>
+                            <#input id="content" name="内容" underline="true"/>
+                            <#input id="image" name="图片地址"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="readCount" name="查看次数" underline="true"/>
+                            <#input id="hot" name="是否为热点文章：0：不是1：是" underline="true"/>
+                            <#input id="createTime" name="创建时间" underline="true"/>
+                            <#input id="createBy" name="创建人" underline="true"/>
+                            <#input id="delFlag" name="删除标志：0：正常1：已删除" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="RenovationInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="RenovationInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/weilai/renovation/renovation_info.js"></script>
+@}

@@ -61,8 +61,8 @@ public abstract class AbstractGeneratorConfig {
         packageConfig();
         contextConfig();
 
-        packageConfig.setService("com.stylefeng.guns.modular." + contextConfig.getModuleName() + ".service");
-        packageConfig.setServiceImpl("com.stylefeng.guns.modular." + contextConfig.getModuleName() + ".service.impl");
+        packageConfig.setService("com.weilai." + contextConfig.getModuleName() + ".service");
+        packageConfig.setServiceImpl("com.weilai." + contextConfig.getModuleName() + ".service.impl");
 
         //controller没用掉,生成之后会自动删掉
         packageConfig.setController("TTT");
