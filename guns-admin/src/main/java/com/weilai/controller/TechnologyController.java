@@ -32,7 +32,7 @@ public class TechnologyController extends BaseController{
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(Technology technology) {
-    	List<Technology> list = technologyService.selectList(null);
+    	List<Technology> list = technologyService.selectList(technology);
         return super.warpObject(new BaseWarpper(list));
     }
 }

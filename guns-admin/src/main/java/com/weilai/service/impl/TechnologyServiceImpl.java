@@ -1,20 +1,14 @@
 package com.weilai.service.impl;
 
-import javax.annotation.Resource;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.weilai.dao.TechnologyMapper;
+import com.stylefeng.guns.core.base.service.impl.BaseServiceImpl;
 import com.weilai.model.Technology;
 import com.weilai.service.TechnologyService;
 
 @Service
 @Transactional
-public class TechnologyServiceImpl extends ServiceImpl<TechnologyMapper, Technology> implements TechnologyService {
+public class TechnologyServiceImpl extends BaseServiceImpl<Technology> implements TechnologyService {
 
-	@Resource
-	TechnologyMapper technologyMapper;
-    
 }

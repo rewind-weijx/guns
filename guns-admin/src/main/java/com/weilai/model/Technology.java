@@ -10,12 +10,6 @@ public class Technology extends Model<Technology>{
 	private String name;
 	private String content;
 	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
@@ -35,6 +29,12 @@ public class Technology extends Model<Technology>{
 				", name=" + name +
 				", content=" + content +
 				"}";
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 }
