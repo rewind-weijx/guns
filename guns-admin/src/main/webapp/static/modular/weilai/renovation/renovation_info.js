@@ -65,18 +65,24 @@ RenovationInfoDlg.addSubmit = function() {
     this.clearData();
     this.collectData();
 
-    //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/renovation/add", function(data){
-        Feng.success("添加成功!");
-        window.parent.Renovation.table.refresh();
-        RenovationInfoDlg.close();
-    },function(data){
-        Feng.error("添加失败!" + data.responseJSON.message + "!");
+    $.ajax({
+    	url:Feng.ctxPath + "/renovation/add",
+    	type:"post",
+    	async:false,
+    	dataType:"json",
+    	data:$("#form").serialize(),
+    	success:function(json){
+    		Feng.success("添加成功!");
+    	    window.parent.Renovation.table.refresh();
+    	    RenovationInfoDlg.close();
+    	}
     });
-    ajax.set(this.renovationInfoData);
-    ajax.start();
 }
-
+function addSubmitCallback(){
+	Feng.success("添加成功!");
+    window.parent.Renovation.table.refresh();
+    RenovationInfoDlg.close();
+}
 /**
  * 提交修改
  */

@@ -89,7 +89,12 @@ public class RenovationController extends BaseController {
         renovationService.insert(renovation);
         return super.SUCCESS_TIP;
     }
-
+    @RequestMapping(value = "/add")
+    @ResponseBody
+    public Object addDetail(Renovation renovation) {
+        renovationService.insert(renovation);
+        return super.SUCCESS_TIP;
+    }
     /**
      * 删除装修
      */
