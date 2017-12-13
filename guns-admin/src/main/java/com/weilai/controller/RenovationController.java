@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.stylefeng.guns.core.base.controller.BaseController;
+import com.stylefeng.guns.core.base.tips.SuccessTip;
 import com.stylefeng.guns.core.log.LogObjectHolder;
 import com.weilai.model.Renovation;
+import com.weilai.model.RenovationDetail;
 import com.weilai.service.IRenovationService;
 
 /**
@@ -87,12 +89,14 @@ public class RenovationController extends BaseController {
     @ResponseBody
     public Object add(Renovation renovation) {
         renovationService.insert(renovation);
-        return super.SUCCESS_TIP;
+        SuccessTip tip = super.SUCCESS_TIP;
+        tip.setData(renovation.getId());
+        return tip;
     }
-    @RequestMapping(value = "/add")
+    @RequestMapping(value = "/addDetail")
     @ResponseBody
-    public Object addDetail(Renovation renovation) {
-        renovationService.insert(renovation);
+    public Object addDetail(RenovationDetail renovationDetail) {
+        renovationService.insertDetail(renovationDetail);
         return super.SUCCESS_TIP;
     }
     /**

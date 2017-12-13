@@ -16,9 +16,36 @@
 		<result column="del_flag" property="delFlag" />
 	</resultMap>
 
-    <!-- 通用查询结果列 -->
-    <sql id="Base_Column_List">
-        id, type, title, content, image, read_count AS readCount, hot, create_time AS createTime, create_by AS createBy, del_flag AS delFlag
-    </sql>
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id, type, title, content, image, read_count AS readCount, hot,
+		create_time AS createTime, create_by AS createBy, del_flag AS delFlag
+	</sql>
+
+	<insert id="insertDetail" parameterType="com.weilai.model.RenovationDetail">
+
+		INSERT INTO guns.renovation_detail
+		(id,
+		renovation_id,
+		title,
+		content,
+		image,
+		create_time,
+		create_by,
+		del_flag
+		)
+		VALUES
+		(
+		#{id},
+		#{renovationId},
+		#{title},
+		#{content},
+		#{image},
+		#{createTime},
+		#{createBy},
+		#{delFlag}
+		);
+
+	</insert>
 
 </mapper>

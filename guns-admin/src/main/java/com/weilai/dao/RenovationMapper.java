@@ -1,6 +1,7 @@
 package com.weilai.dao;
 
 import com.weilai.model.Renovation;
+import com.weilai.model.RenovationDetail;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
@@ -12,5 +13,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * @since 2017-12-10
  */
 public interface RenovationMapper extends BaseMapper<Renovation> {
+
+	void insertDetail(RenovationDetail renovationDetail);
 
 }

@@ -72,11 +72,35 @@ RenovationInfoDlg.addSubmit = function() {
     	dataType:"json",
     	data:$("#form").serialize(),
     	success:function(json){
+    		console.log(json.data);
+    		addDetail(json.data);
     		Feng.success("添加成功!");
     	    window.parent.Renovation.table.refresh();
     	    RenovationInfoDlg.close();
     	}
     });
+}
+function addDetail(renovationId){
+	var detailContent = $("#form .detailContent");
+	var detailImage = $("#form .detailImage");
+	$.each(detailContent,function(index,contentElement){
+		var content = $(contentElement).val();
+		var image = $(detailImage[index]).val();
+		$.ajax({
+	    	url:Feng.ctxPath + "/renovation/addDetail",
+	    	type:"post",
+	    	async:false,
+	    	dataType:"json",
+	    	data:{
+	    		renovationId:renovationId,
+	    		content:content,
+	    		image:image
+	    	},
+	    	success:function(json){
+	    		
+	    	}
+	    });
+	});
 }
 function addSubmitCallback(){
 	Feng.success("添加成功!");
@@ -104,5 +128,5 @@ RenovationInfoDlg.editSubmit = function() {
 }
 
 $(function() {
-
+	  
 });
