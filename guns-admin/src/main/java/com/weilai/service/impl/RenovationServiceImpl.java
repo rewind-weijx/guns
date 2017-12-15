@@ -2,6 +2,7 @@ package com.weilai.service.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,6 +50,13 @@ public class RenovationServiceImpl extends BaseServiceImpl<Renovation> implement
 		renovationDetail.setDelFlag("0");
 		renovationDetail.setId(IdFactory.getID());
 		renovationMapper.insertDetail(renovationDetail);
+	}
+
+	@Override
+	public List<RenovationDetail> selectDetailList(String renovationId) {
+		RenovationDetail detail = new RenovationDetail();
+		detail.setRenovationId(renovationId);
+		return renovationMapper.selectDetailList(detail);
 	}
 	
 }

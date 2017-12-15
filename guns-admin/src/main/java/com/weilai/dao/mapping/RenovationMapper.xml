@@ -24,7 +24,7 @@
 
 	<insert id="insertDetail" parameterType="com.weilai.model.RenovationDetail">
 
-		INSERT INTO guns.renovation_detail
+		INSERT INTO renovation_detail
 		(id,
 		renovation_id,
 		title,
@@ -47,5 +47,7 @@
 		);
 
 	</insert>
-
+	<select id="selectDetailList" parameterType="com.weilai.model.RenovationDetail" resultType="com.weilai.model.RenovationDetail">
+		select * from renovation_detail where del_flag=0 and renovation_id=#{renovationId}
+	</select>
 </mapper>

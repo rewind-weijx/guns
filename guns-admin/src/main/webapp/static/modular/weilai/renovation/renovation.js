@@ -66,7 +66,7 @@ Renovation.openRenovationDetail = function () {
             area: ['800px', '420px'], //宽高
             fix: false, //不固定
             maxmin: true,
-            content: Feng.ctxPath + '/renovation/renovation_update/' + Renovation.seItem.id
+            content: Feng.ctxPath + '/renovation/renovation_detail/' + Renovation.seItem.id
         });
         this.layerIndex = index;
     }

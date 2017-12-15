@@ -2,16 +2,23 @@ package com.weilai.model;
 
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotations.TableField;
+
 public class RenovationDetail {
 
 	private String id;
+	@TableField(value="renovation_id")
 	private String renovationId; 
 	private String title;
 	private String content; 
 	private String image;
+	@TableField(value="create_time")
 	private Date createTime; 
+	@TableField(value="create_by")
 	private String createBy;
+	@TableField(value="del_flag")
 	private String delFlag;
+	
 	public String getId() {
 		return id;
 	}

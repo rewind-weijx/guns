@@ -1,5 +1,7 @@
 package com.weilai.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,13 +67,24 @@ public class RenovationController extends BaseController {
      * 跳转到修改装修
      */
     @RequestMapping("/renovation_update/{renovationId}")
-    public String renovationUpdate(@PathVariable Integer renovationId, Model model) {
+    public String renovationUpdate(@PathVariable String renovationId, Model model) {
         Renovation renovation = renovationService.selectById(renovationId);
         model.addAttribute("item",renovation);
         LogObjectHolder.me().set(renovation);
         return PREFIX + "renovation_edit.html";
     }
-
+    /**
+     * 跳转到详情
+     */
+    @RequestMapping("/renovation_detail/{renovationId}")
+    public String renovationDetail(@PathVariable String renovationId, Model model) {
+        Renovation renovation = renovationService.selectById(renovationId);
+        model.addAttribute("item",renovation);
+        List<RenovationDetail> list = renovationService.selectDetailList(renovation.getId());
+        model.addAttribute("list", list);
+        LogObjectHolder.me().set(renovation);
+        return PREFIX + "renovation_detail.html";
+    }
     /**
      * 获取装修列表
      */
