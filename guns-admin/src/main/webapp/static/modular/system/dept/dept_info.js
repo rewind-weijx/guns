@@ -130,7 +130,7 @@ DeptInfoDlg.addSubmit = function() {
     }
 
     //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/dept/add", function(data){
+    var ajax = new $ax(Feng.ctxPath + "/admin/dept/add", function(data){
         Feng.success("添加成功!");
         window.parent.Dept.table.refresh();
         DeptInfoDlg.close();
@@ -154,7 +154,7 @@ DeptInfoDlg.editSubmit = function() {
     }
 
     //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/dept/update", function(data){
+    var ajax = new $ax(Feng.ctxPath + "/admin/dept/update", function(data){
         Feng.success("修改成功!");
         window.parent.Dept.table.refresh();
         DeptInfoDlg.close();

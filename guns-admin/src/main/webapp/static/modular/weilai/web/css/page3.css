@@ -1,0 +1,38 @@
+.section-title{
+		margin-bottom: 42px;
+	}
+	.section-title p{
+		margin: 0;
+		font-size: 14px;
+		line-height: 28px;
+	}
+	.section-title h2{
+		margin-bottom: 36px;
+	}
+	.team-item{
+		margin-bottom: 38px;
+	}
+	.team-socials{
+		overflow: hidden;
+	}
+	.team-socials a{
+		font-size: 14px;
+		line-height: 34px;
+		float: right;
+	}
+	.team-socials .see{
+		width: 86px;
+		height: 34px;
+		text-align: center;
+		line-height: 34px;
+		color: #fff;
+		display: block;
+		float: left;
+		background-color: #a9aaae;
+		border-radius: 4px;
+		font-size: 14px;
+	}
+	.team-item:hover .team-socials .see{
+		background-color: #e85046;
+		color:#fff;
+	}
