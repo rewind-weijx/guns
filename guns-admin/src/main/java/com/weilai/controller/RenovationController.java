@@ -85,6 +85,15 @@ public class RenovationController extends BaseController {
         LogObjectHolder.me().set(renovation);
         return PREFIX + "renovation_detail.html";
     }
+    @RequestMapping("/renovation_goUpdate/{renovationId}")
+    public String renovationGoUpdate(@PathVariable String renovationId, Model model) {
+        Renovation renovation = renovationService.selectById(renovationId);
+        model.addAttribute("item",renovation);
+        List<RenovationDetail> list = renovationService.selectDetailList(renovation.getId());
+        model.addAttribute("list", list);
+        LogObjectHolder.me().set(renovation);
+        return PREFIX + "renovation_update.html";
+    }
     /**
      * 获取装修列表
      */
@@ -112,6 +121,12 @@ public class RenovationController extends BaseController {
         renovationService.insertDetail(renovationDetail);
         return super.SUCCESS_TIP;
     }
+    @RequestMapping(value = "/deleteDetail")
+    @ResponseBody
+    public Object deleteDetail(String renovationId) {
+        renovationService.deleteDetail(renovationId);
+        return super.SUCCESS_TIP;
+    }
     /**
      * 删除装修
      */
@@ -129,7 +144,9 @@ public class RenovationController extends BaseController {
     @ResponseBody
     public Object update(Renovation renovation) {
         renovationService.updateById(renovation);
-        return super.SUCCESS_TIP;
+        SuccessTip tip = super.SUCCESS_TIP;
+        tip.setData(renovation.getId());
+        return tip;
     }
 
     /**

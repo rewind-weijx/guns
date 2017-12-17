@@ -58,5 +58,10 @@ public class RenovationServiceImpl extends BaseServiceImpl<Renovation> implement
 		detail.setRenovationId(renovationId);
 		return renovationMapper.selectDetailList(detail);
 	}
+
+	@Override
+	public int deleteDetail(String renovationId) {
+		return renovationMapper.deleteDetail(renovationId);
+	}
 	
 }

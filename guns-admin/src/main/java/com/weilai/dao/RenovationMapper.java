@@ -21,4 +21,6 @@ public interface RenovationMapper extends BaseMapper<Renovation> {
 
 	List<RenovationDetail> selectDetailList(RenovationDetail detail);
 
+	int deleteDetail(String renovationId);
+
 }

@@ -47,7 +47,41 @@
 		);
 
 	</insert>
+<!-- 	<update id="updateById" parameterType="com.weilai.model.Renovation"> -->
+<!-- 		UPDATE guns.renovation  -->
+<!-- 			<set> -->
+<!-- 				<if test="type!=null and type!=''"> -->
+<!-- 					type=#{type}, -->
+<!-- 				</if>	 -->
+				
+<!-- 				<if test="title!=null and title!=''"> -->
+<!-- 					title=#{title}, -->
+<!-- 				</if>	 -->
+				
+<!-- 				<if test="content!=null and content!=''"> -->
+<!-- 					content=#{content}, -->
+<!-- 				</if>	 -->
+				
+<!-- 				<if test="image!=null and image!=''"> -->
+<!-- 					image=#{image}, -->
+<!-- 				</if>	 -->
+				
+<!-- 				<if test="readCount!=null and readCount!=''"> -->
+<!-- 					read_count=#{readCount} -->
+<!-- 				</if>	 -->
+				
+<!-- 				<if test="hot!=null and hot!=''"> -->
+<!-- 					hot=#{hot} -->
+<!-- 				</if>				 -->
+<!-- 			</set> -->
+<!-- 			WHERE -->
+<!-- 			id = 'id' ; -->
+				
+<!-- 	</update> -->
 	<select id="selectDetailList" parameterType="com.weilai.model.RenovationDetail" resultType="com.weilai.model.RenovationDetail">
 		select * from renovation_detail where del_flag=0 and renovation_id=#{renovationId}
 	</select>
+	<delete id="deleteDetail" parameterType="java.lang.String">
+		update renovation_detail set del_flag=1 where renovation_id=#{renovationId}
+	</delete>
 </mapper>

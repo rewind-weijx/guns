@@ -20,4 +20,6 @@ public interface IRenovationService extends BaseService<Renovation> {
 
 	List<RenovationDetail> selectDetailList(String id);
 
+	int deleteDetail(String renovationId);
+
 }

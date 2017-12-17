@@ -80,6 +80,41 @@ RenovationInfoDlg.addSubmit = function() {
     	}
     });
 }
+RenovationInfoDlg.updateSubmit = function() {
+
+    this.clearData();
+    this.collectData();
+
+    $.ajax({
+    	url:Feng.ctxPath + "/renovation/update",
+    	type:"post",
+    	async:false,
+    	dataType:"json",
+    	data:$("#form").serialize(),
+    	success:function(json){
+    		console.log(json.data);
+    		deleteDetail(json.data);
+    		addDetail(json.data);
+    		Feng.success("修改成功!");
+    	    window.parent.Renovation.table.refresh();
+    	    RenovationInfoDlg.close();
+    	}
+    });
+}
+function deleteDetail(renovationId){
+	$.ajax({
+    	url:Feng.ctxPath + "/renovation/deleteDetail",
+    	type:"post",
+    	async:false,
+    	dataType:"json",
+    	data:{
+    		renovationId:renovationId
+    	},
+    	success:function(json){
+    		
+    	}
+    });
+}
 function addDetail(renovationId){
 	var detailContent = $("#form .detailContent");
 	var detailImage = $("#form .detailImage");
@@ -106,25 +141,6 @@ function addSubmitCallback(){
 	Feng.success("添加成功!");
     window.parent.Renovation.table.refresh();
     RenovationInfoDlg.close();
-}
-/**
- * 提交修改
- */
-RenovationInfoDlg.editSubmit = function() {
-
-    this.clearData();
-    this.collectData();
-
-    //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/renovation/update", function(data){
-        Feng.success("修改成功!");
-        window.parent.Renovation.table.refresh();
-        RenovationInfoDlg.close();
-    },function(data){
-        Feng.error("修改失败!" + data.responseJSON.message + "!");
-    });
-    ajax.set(this.renovationInfoData);
-    ajax.start();
 }
 
 $(function() {
