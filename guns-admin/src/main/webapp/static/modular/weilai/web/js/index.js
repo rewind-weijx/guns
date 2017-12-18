@@ -20,21 +20,62 @@ function IsPC() {
 }
 window.onload = function(){
 	if(IsPC()){
-		var swiper = new Swiper('#swiper', {
+		var swiper = new Swiper('#swiper-02', {
 		      slidesPerView: 3,
 		      spaceBetween: 30,
 		      slidesPerGroup: 3,
 		      loop: true,
 		      pagination: {
-		        el: '#pagination',
+		        el: '#pagination-02',
 		        clickable: true,
 		      },
 		      navigation: {
-		        nextEl: '#swiper-button-next',
-		        prevEl: '#swiper-button-prev',
+		        nextEl: '#swiper-button-next-02',
+		        prevEl: '#swiper-button-prev-02',
 		      },
 		    });
-
+		var swiper = new Swiper('#swiper-03', {
+		      slidesPerView: 3,
+		      spaceBetween: 30,
+		      slidesPerGroup: 3,
+		      loop: true,
+		      pagination: {
+		        el: '#pagination-03',
+		        clickable: true,
+		      },
+		      navigation: {
+		        nextEl: '#swiper-button-next-03',
+		        prevEl: '#swiper-button-prev-03',
+		      },
+		    });
+		var swiper = new Swiper('#swiper-04', {
+		      slidesPerView: 3,
+		      spaceBetween: 30,
+		      slidesPerGroup: 3,
+		      loop: true,
+		      pagination: {
+		        el: '#pagination-04',
+		        clickable: true,
+		      },
+		      navigation: {
+		        nextEl: '#swiper-button-next-04',
+		        prevEl: '#swiper-button-prev-04',
+		      },
+		    });
+		var swiper = new Swiper('#swiper-05', {
+		      slidesPerView: 3,
+		      spaceBetween: 30,
+		      slidesPerGroup: 3,
+		      loop: true,
+		      pagination: {
+		        el: '#pagination-05',
+		        clickable: true,
+		      },
+		      navigation: {
+		        nextEl: '#swiper-button-next-05',
+		        prevEl: '#swiper-button-prev-05',
+		      },
+		    });
 		    var swiper = new Swiper('#swipwe1', {
 		      slidesPerView: 4,
 		      spaceBetween: 30,
