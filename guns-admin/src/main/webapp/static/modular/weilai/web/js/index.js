@@ -35,9 +35,9 @@ window.onload = function(){
 		      },
 		    });
 		var swiper = new Swiper('#swiper-03', {
-		      slidesPerView: 3,
+		      slidesPerView: 4,
 		      spaceBetween: 30,
-		      slidesPerGroup: 3,
+		      slidesPerGroup: 4,
 		      loop: true,
 		      pagination: {
 		        el: '#pagination-03',
