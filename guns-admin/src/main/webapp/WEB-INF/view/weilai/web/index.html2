@@ -20,15 +20,7 @@
 		<link href="${ctxPath}/static/modular/weilai/web/css/public.css" rel="stylesheet">
 		<link href="${ctxPath}/static/modular/weilai/web/css/index.css" rel="stylesheet">
 		<link href="https://cdn.bootcss.com/Swiper/4.0.7/css/swiper.min.css" rel="stylesheet">
-		<style type="text/css">
-			#nav li ul {
-			    width: 160px;
-			}
-			section{
-				padding-bottom: 30px;
-				padding-top: 50px;
-			}
-		</style>
+		
 	</head>
 	<body id="page-top">
 		<!-- Navigation -->
@@ -215,6 +207,7 @@
 				</div>
 			</div>
 		</header>
+
 
 		<section id="01" class="light-bg">
 			<div class="container">
@@ -556,7 +549,7 @@
 				</div>
 			</div>
 		</section>
-
+		
 		<section id="04">
 			<div class="container">
 				<div class="row">
@@ -677,7 +670,7 @@
 			</div>
 		</section>
 		
-		<section id="05" class="light-bg">
+		<section id="05">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 text-center">
@@ -750,7 +743,7 @@
 			</div>
 		</section>
 
-		<section id="06">
+		<section id="06" class="light-bg">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 text-center">
@@ -836,7 +829,7 @@
 			</div>
 		</section>
 
-		<section id="07" class="light-bg">
+		<section id="07">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 text-center">
@@ -900,12 +893,12 @@
 			<!-- /.container -->
 		</section>
 		
-		<section id="08">
+		<section id="08" class="light-bg">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 text-center">
 						<div class="section-title">
-							<h2>部门简介</h2>
+							<h2>公司简介</h2>
 							<!-- <p>Nantes is a clean, responsive bootstrap template suitable for agencies, design studios, mobile apps or business sites. It uses the best clean SEO practices, and on top of that, it’s fast, simple, and easy to modify. <br><strong>Nantes Is More Than A Theme, It’s A Powerful Design Tool</strong></p> -->
 						</div>
 					</div>
@@ -963,8 +956,8 @@
 			</div>
 			<!-- /.container -->
 		</section>
-		
-		<section id="partners" class="light-bg">
+	
+		<section id="09">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 text-center">
@@ -1008,8 +1001,8 @@
 				</div>
 			</div>
 		</section>
-		
-		<section id="09" class="dark-bg">
+	
+		<section id="10" class="dark-bg">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 text-center">
@@ -1072,6 +1065,7 @@
 				</div>
 			</div>
 		</section>
+	
 		<p id="back-top">
 			<a href="#top"><i class="fa fa-angle-up"></i></a>
 		</p>
