@@ -6,7 +6,7 @@ var Renovation = {
     seItem: null,		//选中的条目
     table: null,
     layerIndex: -1,
-    location:$("#location").val()
+    location:$("#type").val()
 };
 
 /**

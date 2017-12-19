@@ -17,6 +17,7 @@ import com.stylefeng.guns.core.log.LogObjectHolder;
 import com.weilai.model.Renovation;
 import com.weilai.model.RenovationDetail;
 import com.weilai.service.IRenovationService;
+import com.weilai.util.Constant;
 
 /**
  * 装修控制器
@@ -36,30 +37,19 @@ public class RenovationController extends BaseController {
     /**
      * 跳转到装修首页
      */
-    @RequestMapping(value={"/{renovation}"})
-    public String index(@PathVariable String renovation,ModelMap modelMap) {
-    	modelMap.put("type", getTypeByLocation(renovation));
-    	modelMap.put("location", renovation);
+    @RequestMapping(value={"/{type}"})
+    public String index(@PathVariable String type,ModelMap modelMap) {
+    	modelMap.put("type", type);
+    	modelMap.put("typeName", Constant.getRenovationNameByValue(type));
         return PREFIX + "renovation.html";
     }
 
-    private String getTypeByLocation(String renovation){
-    	if("designstyle".equals(renovation)){
-    		return "1";
-    	}if("smarthome".equals(renovation)){
-    		return "2";
-    	}if("customwoodendoor".equals(renovation)){
-    		return "3";
-    	}
-    	return "1";
-    }
-    
     /**
      * 跳转到添加装修
      */
-    @RequestMapping("/renovation_add/{renovation}")
-    public String renovationAdd(@PathVariable String renovation,ModelMap modelMap) {
-    	modelMap.put("type", getTypeByLocation(renovation));
+    @RequestMapping("/renovation_add/{type}")
+    public String renovationAdd(@PathVariable String type,ModelMap modelMap) {
+    	modelMap.put("type", type);
         return PREFIX + "renovation_add.html";
     }
 
@@ -97,10 +87,10 @@ public class RenovationController extends BaseController {
     /**
      * 获取装修列表
      */
-    @RequestMapping(value = "/list/{location}")
+    @RequestMapping(value = "/list/{type}")
     @ResponseBody
-    public Object list(Renovation renovation,@PathVariable String location) {
-    	renovation.setType(getTypeByLocation(location));
+    public Object list(Renovation renovation,@PathVariable String type) {
+    	renovation.setType(type);
         return renovationService.selectList(renovation);
     }
 

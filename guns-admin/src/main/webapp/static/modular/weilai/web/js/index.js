@@ -62,80 +62,108 @@ window.onload = function(){
 		        prevEl: '#swiper-button-prev-04',
 		      },
 		    });
-		    var swiper = new Swiper('#swipwe1', {
+		    var swiper = new Swiper('#swiper-demo', {
 		      slidesPerView: 4,
 		      spaceBetween: 30,
 		      slidesPerGroup: 4,
 		      loop: true,
 		      pagination: {
-		        el: '#pagination1',
+		        el: '#paginationdemo',
 		        clickable: true,
 		      },
 		      navigation: {
-		        nextEl: '#swiper-button-next1',
-		        prevEl: '#swiper-button-prev1',
+		        nextEl: '#swiper-button-nextdemo',
+		        prevEl: '#swiper-button-prevdemo',
 		      },
 		    });
 
-		    var swiper = new Swiper('#swipwe2', {
+		    var swiper = new Swiper('#swiper5', {
 		      slidesPerView: 3,
 		      spaceBetween: 30,
 		      slidesPerGroup: 3,
 		      loop: true,
 		      pagination: {
-		        el: '#pagination2',
+		        el: '#pagination5',
 		        clickable: true,
 		      },
 		      navigation: {
-		        nextEl: '#swiper-button-next2',
-		        prevEl: '#swiper-button-prev2',
+		        nextEl: '#swiper-button-next5',
+		        prevEl: '#swiper-button-prev5',
 		      },
 		    });
+		    
 		}else{
 			var swiper = new Swiper('#swiper', {
-		      slidesPerView: 1,
-		      spaceBetween: 30,
-		      slidesPerGroup: 1,
-		      loop: true,
-		      pagination: {
-		        el: '#pagination',
-		        clickable: true,
-		      },
-		      navigation: {
-		        nextEl: '#swiper-button-next',
-		        prevEl: '#swiper-button-prev',
-		      },
-		    });
+			      slidesPerView: 1,
+			      spaceBetween: 30,
+			      slidesPerGroup: 1,
+			      loop: true,
+			      pagination: {
+			        el: '#pagination',
+			        clickable: true,
+			      },
+			      navigation: {
+			        nextEl: '#swiper-button-next',
+			        prevEl: '#swiper-button-prev',
+			      },
+			    });
+			var swiper = new Swiper('#swiper-03', {
+			      slidesPerView: 1,
+			      spaceBetween: 30,
+			      slidesPerGroup: 1,
+			      loop: true,
+			      pagination: {
+			        el: '#pagination-03',
+			        clickable: true,
+			      },
+			      navigation: {
+			        nextEl: '#swiper-button-next-03',
+			        prevEl: '#swiper-button-prev-03',
+			      },
+			    });
+			var swiper = new Swiper('#swiper-04', {
+			      slidesPerView: 1,
+			      spaceBetween: 30,
+			      slidesPerGroup: 1,
+			      loop: true,
+			      pagination: {
+			        el: '#pagination-04',
+			        clickable: true,
+			      },
+			      navigation: {
+			        nextEl: '#swiper-button-next-04',
+			        prevEl: '#swiper-button-prev-04',
+			      },
+			    });
+			    var swiper = new Swiper('#swiper-demo', {
+			      slidesPerView: 1,
+			      spaceBetween: 30,
+			      slidesPerGroup: 1,
+			      loop: true,
+			      pagination: {
+			        el: '#paginationdemo',
+			        clickable: true,
+			      },
+			      navigation: {
+			        nextEl: '#swiper-button-nextdemo',
+			        prevEl: '#swiper-button-prevdemo',
+			      },
+			    });
 
-		    var swiper = new Swiper('#swipwe1', {
-		      slidesPerView: 1,
-		      spaceBetween: 30,
-		      slidesPerGroup: 1,
-		      loop: true,
-		     pagination: {
-		        el: '#pagination1',
-		        clickable: true,
-		      },
-		      navigation: {
-		        nextEl: '#swiper-button-next1',
-		        prevEl: '#swiper-button-prev1',
-		      },
-		    });
-
-		    var swiper = new Swiper('#swipwe2', {
-		      slidesPerView: 1,
-		      spaceBetween: 30,
-		      slidesPerGroup: 1,
-		      loop: true,
-		      pagination: {
-		        el: '#pagination2',
-		        clickable: true,
-		      },
-		      navigation: {
-		        nextEl: '#swiper-button-next2',
-		        prevEl: '#swiper-button-prev2',
-		      },
-		    });
+			    var swiper = new Swiper('#swiper5', {
+			      slidesPerView: 1,
+			      spaceBetween: 30,
+			      slidesPerGroup: 1,
+			      loop: true,
+			      pagination: {
+			        el: '#pagination5',
+			        clickable: true,
+			      },
+			      navigation: {
+			        nextEl: '#swiper-button-next5',
+			        prevEl: '#swiper-button-prev5',
+			      },
+			    });
 		}
 	
 }
