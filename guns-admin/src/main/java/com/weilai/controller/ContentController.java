@@ -30,6 +30,7 @@ public class ContentController  extends BaseController {
 		modelMap.put("smartHome",smartHome );
 		List<Renovation> list = webIndexService.listByType(type);
 		modelMap.put("list", list);
+		modelMap.put("menuName", Constant.getRenovationNameByValue(type));
 		return PREFIX+"page2.html";
 	}
 	@RequestMapping(value={"/detail/{id}"})
@@ -40,6 +41,7 @@ public class ContentController  extends BaseController {
 		
 		Renovation renovation = webIndexService.detail(id);
 		modelMap.put("renovation", renovation);
+		modelMap.put("typeName", Constant.getRenovationNameByValue(renovation.getType()));
 		List<RenovationDetail> list = webIndexService.detailList(id);
 		modelMap.put("list", list);
 		return PREFIX+"page3.html";

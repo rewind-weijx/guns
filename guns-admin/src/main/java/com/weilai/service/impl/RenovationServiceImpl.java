@@ -40,6 +40,10 @@ public class RenovationServiceImpl extends BaseServiceImpl<Renovation> implement
 	@Override
 	public boolean insert(Renovation entity) {
 		entity.setId(IdFactory.getID());
+		entity.setReadCount(0L);
+		entity.setCreateBy("admin");
+		entity.setCreateTime(new Date());
+		entity.setDelFlag("0");
 		return super.insertAllColumn(entity);
 	}
 

@@ -5,17 +5,17 @@ public class Constant {
 	public enum RenovationType{
 		
 		//装饰设计
-		type01("1","室内设计"),
-		type02("2","别墅定制"),
-		type03("3","写字楼办公室定制"),
-		type04("4","酒店会所定制"),
-		type05("5","餐饮定制"),
-		type06("6","品牌店面定制"),
+		type01("01","室内设计"),
+		type02("02","别墅定制"),
+		type03("03","写字楼办公室定制"),
+		type04("04","酒店会所定制"),
+		type05("05","餐饮定制"),
+		type06("06","品牌店面定制"),
 		
 		//产品定制
-		type07("7","橱柜定制"),
-		type08("8","家具定制"),
-		type09("9","木门定制"),
+		type07("07","橱柜定制"),
+		type08("08","家具定制"),
+		type09("09","木门定制"),
 		
 		//工程服务
 		type10("10","保温系列"),
@@ -37,6 +37,7 @@ public class Constant {
 		
 		RenovationType(String value,String name) {
 			this.value = value;
+			this.name = name;
 		}
 
 		String value;

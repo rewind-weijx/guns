@@ -20,78 +20,43 @@
 				<div>
 					<div class="text-center article-detail">
 					
-						<h2>125平北美风格装修案例 打造最舒适家居</h2>
+						<h2>${renovation.title}</h2>
 						<p>
+							@if(renovation.hot=='1'){
 							<span class="mr10"><i class="fa fa-firefox default mr5"></i>热点</span>
-							<span class="mr10"><i class="fa fa-clock-o mr5" aria-hidden="true"></i>2017年6月30日</span>
-							<span class="mr10"><i class="fa fa-eye mr5"></i>访问量：1000</span>
-							<span class="type">所属分类：<span class="default">装修案例</span></span>
+							@}
+							<span class="mr10"><i class="fa fa-clock-o mr5" aria-hidden="true"></i>${renovation.createTime,'yyyy-MM-dd HH:mm:SS'}</span>
+							<span class="mr10"><i class="fa fa-eye mr5"></i>访问量：${renovation.readCount}</span>
+							<span class="type">所属分类：<span class="default">${typeName}</span></span>
 						</p>
-						<p class="text-left">北美风格的家居整体整洁大方，而兼具古典情怀，是一种混合风格。也是现在家居装修非常流行的风格，今天小编和大家分享一套非常棒的北美风格家居装修案例。</p>
+<!-- 						<p class="text-left">${renovation.content}</p> -->
 					
 					</div>
 				</div>
-				<div class="row row-0-gutter">
-					<!-- start portfolio item -->
-					<div class="col-md-12 col-0-gutter">
-						<div class="ot-portfolio-item">
-							<figure class="effect-bubba">
-								<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-1.jpg" alt="img02" class="img-responsive"  style="height: 300px;"/>
-
-								<figcaption>
-									<h2>125平北美风格装修案例打造 打造最舒适家居</h2>
-									
-								</figcaption>
-							</figure>
-							<p>美式古典东方卫</p>
+				@for(item in list){
+					<div class="row row-0-gutter">
+						<div class="col-md-12 col-0-gutter">
+							<div class="ot-portfolio-item">
+<!-- 								<figure class="effect-bubba"> -->
+									<img src="${item.image}" alt="img02" class="img-responsive"  style="height: 300px;"/>
+<!-- 									<figcaption> -->
+<!-- 										<h2>${item.content}</h2> -->
+<!-- 									</figcaption> -->
+<!-- 								</figure> -->
+								<p>${item.content}</p>
+							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="row row-0-gutter">
-					<!-- start portfolio item -->
-					<div class="col-md-12 col-0-gutter">
-						<div class="ot-portfolio-item">
-							<figure class="effect-bubba">
-								<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-1.jpg" alt="img02" class="img-responsive"  style="height: 300px;"/>
-
-								<figcaption>
-									<h2>125平北美风格装修案例打造 打造最舒适家居</h2>
-									
-								</figcaption>
-							</figure>
-							<p>美式古典东方卫</p>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="row row-0-gutter">
-					<!-- start portfolio item -->
-					<div class="col-md-12 col-0-gutter">
-						<div class="ot-portfolio-item">
-							<figure class="effect-bubba">
-								<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-1.jpg" alt="img02" class="img-responsive"  style="height: 300px;"/>
-
-								<figcaption>
-									<h2>125平北美风格装修案例打造 打造最舒适家居</h2>
-									
-								</figcaption>
-							</figure>
-							<p>美式古典东方卫</p>
-						</div>
-					</div>
-
-				</div>
+				@}
 			</div>
 		</section>
 
 		<section id="contact" class="expand">
 			<div class="container">
-				<p class="comment">[小编点评] 北美风格是现在比较流行的装修风格。简洁时尚而不失优雅内涵，是各种风情的完美结合表达，这套装修方案里面小编最喜欢厨房了。简约时尚，但非常有内涵。</p>
-				<p >拓展阅读</p>
-				<p class="hot">金秋装修流行趋势抢先看，简洁北美风将大放异彩</p>
-				<p>不知不觉救济即将到来，又到了一年最适合装修的季节，现在装修人们已经不仅仅关注房子装修的花费，要关注房子装修的个性，环保，这个季节装修将会流行什么呢？</p>
+				<p class="comment">[小编点评] ${renovation.content}</p>
+<!-- 				<p >拓展阅读</p> -->
+<!-- 				<p class="hot">金秋装修流行趋势抢先看，简洁北美风将大放异彩</p> -->
+<!-- 				<p>不知不觉救济即将到来，又到了一年最适合装修的季节，现在装修人们已经不仅仅关注房子装修的花费，要关注房子装修的个性，环保，这个季节装修将会流行什么呢？</p> -->
 			</div>
 		</section>
 		<p id="back-top">
