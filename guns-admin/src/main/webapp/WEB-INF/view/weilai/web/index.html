@@ -804,17 +804,17 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<form name="sentMessage" id="contactForm" novalidate="">
+						<form name="sentMessage" id="contactForm" method="post" novalidate="" action="${ctxPath}/sendMessage" >
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder=" 你的姓名 *" id="name" required="" data-validation-required-message="请输入你的姓名">
+										<input type="text" class="form-control" maxlength="20" placeholder=" 你的姓名 *" id="name" name="name" required="" data-validation-required-message="请输入你的姓名">
 										<p class="help-block text-danger"></p>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="email" class="form-control" placeholder="你的手机 *" id="email" required="" data-validation-required-message="请输入你的手机">
+										<input type="text" class="form-control" maxlength="11" placeholder="你的手机 *"  id="mobile" name="mobile" required="" data-validation-required-message="请输入你的手机">
 										<p class="help-block text-danger"></p>
 									</div>
 								</div>
@@ -822,7 +822,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
-										<textarea class="form-control" placeholder="留言 *" id="message" required="" data-validation-required-message="Please enter a message."></textarea>
+										<textarea class="form-control" maxlength="200" placeholder="留言 *" id="description" name="description" required="true" data-validation-required-message="Please enter a message."></textarea>
 										<p class="help-block text-danger"></p>
 									</div>
 								</div>
@@ -831,7 +831,7 @@
 							<div class="row">
 								<div class="col-lg-12 text-center">
 									<div id="success"></div>
-									<button type="submit" class="btn">Send Message</button>
+									<button type="button" id="sendMessage" class="btn">发送信息</button>
 								</div>
 							</div>
 						</form>
@@ -894,15 +894,13 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-3">Lamp & Velvet</h4>
+						<h4 class="modal-title" id="Modal-label-3">提示</h4>
 					</div>
-					<div class="modal-body">
-						<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-3.jpg" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					<div class="modal-body" style="text-align: center; line-height: 50px; color: red; font-size: 20px; font-weight: bold;">
+						请输入姓名
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
 					</div>
 				</div>
 			</div>
@@ -914,15 +912,13 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-4">Smart Name</h4>
+						<h4 class="modal-title" id="Modal-label-4">提示</h4>
 					</div>
-					<div class="modal-body">
-						<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-4.jpg" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					<div class="modal-body" style="text-align: center; line-height: 50px; color: red; font-size: 20px; font-weight: bold;">
+						请输入手机号码
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
 					</div>
 				</div>
 			</div>
@@ -934,25 +930,40 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-5">Fast People</h4>
+						<h4 class="modal-title" id="Modal-label-5">提示</h4>
 					</div>
-					<div class="modal-body">
-						<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-5.jpg" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					<div class="modal-body" style="text-align: center; line-height: 50px; color: red; font-size: 20px; font-weight: bold;">
+						请输入留言
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
-
-
 		<!-- Bootstrap core JavaScript
 			================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		@include("/common/weilai/_basic-script.html"){}
+		<script type="text/javascript">
+			
+			$("#sendMessage").click(function(){
+				var name = $("#name").val();
+				var mobile = $("#mobile").val();
+				var description = $("#description").val();
+				if(name==null||name==""){
+					$("#Modal-3").modal("show");
+					return false;
+				}else if(mobile==null||mobile==""){
+					$("#Modal-4").modal("show");
+					return false;
+				}else if(description==null||description==""){
+					$("#Modal-5").modal("show");
+					return false;
+				}
+				$("#contactForm").submit();
+			});
+		</script>
 	</body>
 </html>

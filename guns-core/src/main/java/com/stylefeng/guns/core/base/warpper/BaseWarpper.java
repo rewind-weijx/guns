@@ -2,6 +2,7 @@ package com.stylefeng.guns.core.base.warpper;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,29 +25,26 @@ public class BaseWarpper {
 	public Object warp() {
 		if (this.obj instanceof List) {
 			List<Object> list = (List<Object>) this.obj;
+			List<Map<String,Object>> resultList = new ArrayList<Map<String,Object>>();
 			for (Object object : list) {
 				if (!(object instanceof Map)) {
-					warpTheMap(this.convertToMap(object));
+					resultList.add(warpTheMap(this.convertToMap(object)));
 					continue;
 				}
-				warpTheMap((Map<String, Object>) object);
+				resultList.add(warpTheMap((Map<String, Object>) object));
 			}
-			// List<Map<String, Object>> list = (List<Map<String, Object>>) this.obj;
-			// for (Map<String, Object> map : list) {
-			// warpTheMap(map);
-			// }
-			return list;
+			return resultList;
 		} else if (this.obj instanceof Map) {
 			Map<String, Object> map = (Map<String, Object>) this.obj;
-			warpTheMap(map);
-			return map;
+			return warpTheMap(map);
 		} else {
 			return this.obj;
 		}
 	}
 
-	public void warpTheMap(Map<String, Object> map) {
+	public Map<String,Object> warpTheMap(Map<String, Object> map) {
 		System.out.println(1);
+		return map;
 	}
 
 	private Map<String, Object> convertToMap(Object object) {

@@ -1,5 +1,6 @@
 package com.weilai.service.impl;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.stylefeng.guns.core.util.IdFactory;
+import com.weilai.model.Contact;
 import com.weilai.model.Renovation;
 import com.weilai.model.RenovationDetail;
 import com.weilai.service.IRenovationService;
@@ -84,6 +87,20 @@ public class WebIndexServiceImpl implements WebIndexService {
 	@Override
 	public List<RenovationDetail> detailList(String renovationId){
 		return renovationService.selectDetailList(renovationId);
+	}
+
+	@Override
+	public int sendMessage(String name, String mobile, String description) {
+		Contact contact = new Contact();
+		contact.setDelFlag("0");
+		contact.setCreateTime(new Date());
+		contact.setDescription(description);
+		contact.setId(IdFactory.getID());
+		contact.setMobile(mobile);
+		contact.setName(name);
+		contact.setReadState("0");
+		contact.insert();
+		return 0;
 	}
 	
 }

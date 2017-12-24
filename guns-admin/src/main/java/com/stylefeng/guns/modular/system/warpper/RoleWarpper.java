@@ -19,9 +19,10 @@ public class RoleWarpper extends BaseWarpper {
     }
 
     @Override
-    public void warpTheMap(Map<String, Object> map) {
+    public Map<String, Object> warpTheMap(Map<String, Object> map) {
         map.put("pName", ConstantFactory.me().getSingleRoleName((Integer) map.get("pid")));
         map.put("deptName", ConstantFactory.me().getDeptName((Integer) map.get("deptid")));
+        return map;
     }
 
 }

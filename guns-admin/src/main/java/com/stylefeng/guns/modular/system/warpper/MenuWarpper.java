@@ -20,9 +20,10 @@ public class MenuWarpper extends BaseWarpper {
     }
 
     @Override
-    public void warpTheMap(Map<String, Object> map) {
+    public Map<String, Object> warpTheMap(Map<String, Object> map) {
         map.put("statusName", ConstantFactory.me().getMenuStatusName((Integer) map.get("status")));
         map.put("isMenuName", IsMenu.valueOf((Integer) map.get("ismenu")));
+        return map;
     }
 
 }

@@ -18,9 +18,10 @@ public class NoticeWrapper extends BaseWarpper {
     }
 
     @Override
-    public void warpTheMap(Map<String, Object> map) {
+    public Map<String, Object> warpTheMap(Map<String, Object> map) {
         Integer creater = (Integer) map.get("creater");
         map.put("createrName", ConstantFactory.me().getUserNameById(creater));
+        return map;
     }
 
 }

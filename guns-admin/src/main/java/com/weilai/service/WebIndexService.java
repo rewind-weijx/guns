@@ -18,4 +18,5 @@ public interface WebIndexService {
 	List<Renovation> listByType(String type);
 	Renovation detail(String id);
 	List<RenovationDetail> detailList(String renovationId);
+	int sendMessage(String name, String mobile, String description);
 }
