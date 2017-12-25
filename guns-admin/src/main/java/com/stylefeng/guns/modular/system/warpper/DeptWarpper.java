@@ -19,7 +19,7 @@ public class DeptWarpper extends BaseWarpper {
     }
 
     @Override
-    public Map<String, Object> warpTheMap(Map<String, Object> map) {
+    public void warpTheMap(Map<String, Object> map) {
 
         Integer pid = (Integer) map.get("pid");
 
@@ -29,7 +29,6 @@ public class DeptWarpper extends BaseWarpper {
             map.put("pName", ConstantFactory.me().getDeptName(pid));
         }
         
-        return map;
     }
 
 }

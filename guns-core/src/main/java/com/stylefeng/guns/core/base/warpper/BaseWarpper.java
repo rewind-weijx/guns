@@ -28,23 +28,30 @@ public class BaseWarpper {
 			List<Map<String,Object>> resultList = new ArrayList<Map<String,Object>>();
 			for (Object object : list) {
 				if (!(object instanceof Map)) {
-					resultList.add(warpTheMap(this.convertToMap(object)));
+					Map<String,Object> map = this.convertToMap(object);
+					warpTheMap( map);
+					resultList.add(map);
 					continue;
 				}
-				resultList.add(warpTheMap((Map<String, Object>) object));
+				Map<String,Object> map = (Map<String, Object>) object;
+				warpTheMap(map);
+				for (String key : map.keySet()) {
+					System.out.println(key+":"+map.get(key));
+				}
+				resultList.add(map);
 			}
 			return resultList;
 		} else if (this.obj instanceof Map) {
 			Map<String, Object> map = (Map<String, Object>) this.obj;
-			return warpTheMap(map);
+			warpTheMap(map);
+			return map;
 		} else {
 			return this.obj;
 		}
 	}
 
-	public Map<String,Object> warpTheMap(Map<String, Object> map) {
+	public void warpTheMap(Map<String, Object> map) {
 		System.out.println(1);
-		return map;
 	}
 
 	private Map<String, Object> convertToMap(Object object) {

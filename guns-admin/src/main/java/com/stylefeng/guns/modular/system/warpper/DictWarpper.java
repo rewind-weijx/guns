@@ -21,7 +21,7 @@ public class DictWarpper extends BaseWarpper {
     }
 
     @Override
-    public Map<String, Object> warpTheMap(Map<String, Object> map) {
+    public void warpTheMap(Map<String, Object> map) {
         StringBuffer detail = new StringBuffer();
         Integer id = (Integer) map.get("id");
         List<Dict> dicts = ConstantFactory.me().findInDict(id);
@@ -31,7 +31,6 @@ public class DictWarpper extends BaseWarpper {
             }
             map.put("detail", ToolUtil.removeSuffix(detail.toString(),","));
         }
-        return map;
     }
 
 }

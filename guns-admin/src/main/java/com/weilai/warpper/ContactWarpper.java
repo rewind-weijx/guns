@@ -19,13 +19,12 @@ public class ContactWarpper extends BaseWarpper {
     }
 
     @Override
-    public Map<String,Object> warpTheMap(Map<String, Object> map) {
+    public void warpTheMap(Map<String, Object> map) {
     	String statusName = "未读";
     	if("1".equals(map.get("readState"))){
     		statusName = "已读";
     	}
         map.put("statusName", statusName);
-        return map;
     }
 
 }

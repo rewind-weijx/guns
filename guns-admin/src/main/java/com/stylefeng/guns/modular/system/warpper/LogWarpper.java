@@ -20,7 +20,7 @@ public class LogWarpper extends BaseWarpper {
     }
 
     @Override
-    public Map<String, Object> warpTheMap(Map<String, Object> map) {
+    public void warpTheMap(Map<String, Object> map) {
         String message = (String) map.get("message");
 
         Integer userid = (Integer) map.get("userid");
@@ -39,7 +39,6 @@ public class LogWarpper extends BaseWarpper {
         }else{
             map.put("regularMessage",message);
         }
-        return map;
     }
 
 }
