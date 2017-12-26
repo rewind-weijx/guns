@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.stylefeng.guns.core.base.controller.BaseController;
-import com.weilai.model.Contact;
 import com.weilai.model.Renovation;
 import com.weilai.service.WebIndexService;
 import com.weilai.util.Constant;
@@ -38,5 +36,11 @@ public class WebIndexController  extends BaseController {
 		webIndexService.sendMessage(name,mobile,description);
 		return "redirect:/";
 	}
-	
+	@RequestMapping(value="deptlist")
+	public String dept(ModelMap modelMap) {
+		//智能家居
+		List<Renovation> smartHome = webIndexService.listByType(Constant.RenovationType.type14.getValue());
+		modelMap.put("smartHome",smartHome );
+		return PREFIX+"dept.html";
+	}
 }

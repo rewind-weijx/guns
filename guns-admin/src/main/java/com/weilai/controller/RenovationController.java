@@ -51,19 +51,12 @@ public class RenovationController extends BaseController {
     @RequestMapping("/renovation_add/{type}")
     public String renovationAdd(@PathVariable String type,ModelMap modelMap) {
     	modelMap.put("type", type);
+    	if(Constant.RenovationType.type18.getValue().equals(type)||(Constant.RenovationType.type19.getValue().equals(type))){
+			return PREFIX + "company_dept_add.html";
+		}
         return PREFIX + "renovation_add.html";
     }
 
-    /**
-     * 跳转到修改装修
-     */
-    @RequestMapping("/renovation_update/{renovationId}")
-    public String renovationUpdate(@PathVariable String renovationId, Model model) {
-        Renovation renovation = renovationService.selectById(renovationId);
-        model.addAttribute("item",renovation);
-        LogObjectHolder.me().set(renovation);
-        return PREFIX + "renovation_edit.html";
-    }
     /**
      * 跳转到详情
      */
@@ -83,6 +76,9 @@ public class RenovationController extends BaseController {
         List<RenovationDetail> list = renovationService.selectDetailList(renovation.getId());
         model.addAttribute("list", list);
         LogObjectHolder.me().set(renovation);
+        if(Constant.RenovationType.type18.getValue().equals(renovation.getType())||(Constant.RenovationType.type19.getValue().equals(renovation.getType()))){
+			return PREFIX + "company_dept_update.html";
+		}
         return PREFIX + "renovation_update.html";
     }
     /**

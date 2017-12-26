@@ -14,30 +14,22 @@
 	<div class="ibox-content">
 		<div class="form-horizontal">
 			<form action="javascript:;" id="form">
-				<input type="hidden" name="id" id="id" value="${item.id}"> <input
-					type="hidden" name="type" id="type" value="${item.type}">
+				<input type="hidden" name="id" id="id" value=""> <input
+					type="hidden" name="type" id="type" value="${type}">
 
 				<div class="row">
 					<div class="form-group col-sm-12">
-						<label class="col-sm-3 control-label">标题</label>
+						<label class="col-sm-3 control-label">部门名称</label>
 						<div class="col-sm-9">
-							<input class="form-control" id="title" name="title" type="text" value="${item.title}" >
+							<input class="form-control" id="title" name="title" type="text">
 						</div>
 					</div>
 					<div class="form-group col-sm-12">
-						<label class="col-sm-3 control-label">热点文章</label>
+						<label class="col-sm-3 control-label">热点部门</label>
 						<div class="col-sm-9">
 							<select class="form-control" id="hot" name="hot">
-								<option value="0" 
-									@if(item.hot=='0'){
-										selected="selected"
-									@}
-								>否</option>
-								<option value="1"
-									@if(item.hot=='1'){
-										selected="selected"
-									@}
-								>是</option>
+								<option value="0">否</option>
+								<option value="1">是</option>
 							</select>
 						</div>
 					</div>
@@ -51,38 +43,17 @@
 					<div class="col-sm-12 form-group">
 						<label class="col-sm-3 control-label"></label>
 						<div class="col-sm-9">
-							<img alt="" src="${item.image}" id="imageView" style="max-width: 100%"> <input
-								class="form-control" id="image" name="image" type="hidden" value="${item.image}" >
+							<img alt="" src="" id="imageView" style="max-width: 100%"> <input
+								class="form-control" id="image" name="image" type="hidden">
 						</div>
 
 					</div>
 					<div class="form-group col-sm-12">
-						<label class="col-sm-3 control-label">内容</label>
+						<label class="col-sm-3 control-label">部门简介</label>
 						<div class="col-sm-9">
-							<textarea class="form-control" id="content" name="content" maxlength="200">${item.content}</textarea>
+							<textarea class="form-control" id="content" name="content" maxlength="200" ></textarea>
 						</div>
 					</div>
-					@for(detail in list){
-						<div class="detail">
-							<div class="form-group col-sm-12">
-								<div class="col-sm-3 control-label"></div>
-								<div class="col-sm-9">
-									<img alt="" src="${detail.image}" style="max-width:100%;" > 
-									<input class="form-control detailImage" name="detailImage" value="${detail.image}" type="hidden">
-								</div>
-								<div class="col-sm-3 control-label"></div>
-							</div>
-							<div class="form-group col-sm-12">';
-								<label class="col-sm-3 control-label">内容</label>
-								<div class="col-sm-7">';
-									<textarea class="form-control detailContent" name="detailContent" maxlength="200">${detail.content}</textarea>
-								</div>
-								<div class="col-sm-2">
-									<button type="button" class="btn btn-info delete_detail">删除选项</button>
-								</div>
-							</div>
-						</div>
-					@}
 					<div id="detail"></div>
 					<div class="form-group col-sm-12">
 						<div class="col-sm-3">&nbsp;</div>
@@ -96,7 +67,7 @@
 			<div class="row btn-group-m-t">
 				<div class="col-sm-12" style="text-align: right;"><#button
 					btnCss="info" name="提交" id="ensure" icon="fa-check"
-					clickFun="RenovationInfoDlg.updateSubmit()"/> <#button btnCss="danger"
+					clickFun="RenovationInfoDlg.addSubmit()"/> <#button btnCss="danger"
 					name="取消" id="cancel" icon="fa-eraser"
 					clickFun="RenovationInfoDlg.close()"/></div>
 			</div>
@@ -132,7 +103,7 @@
 			html += '		<div class="col-sm-3 control-label"></div>';
 			html += '	</div>';
 			html += '	<div class="form-group col-sm-12">';
-			html += '		<label class="col-sm-3 control-label">内容</label>';
+			html += '		<label class="col-sm-3 control-label">描述</label>';
 			html += '		<div class="col-sm-7">';
 			html += '			<textarea class="form-control detailContent" name="detailContent" maxlength="200"></textarea>';
 			html += '		</div>';

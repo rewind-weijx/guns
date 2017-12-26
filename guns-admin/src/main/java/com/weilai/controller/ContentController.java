@@ -44,6 +44,9 @@ public class ContentController  extends BaseController {
 		modelMap.put("typeName", Constant.getRenovationNameByValue(renovation.getType()));
 		List<RenovationDetail> list = webIndexService.detailList(id);
 		modelMap.put("list", list);
+		if(Constant.RenovationType.type18.getValue().equals(renovation.getType())||(Constant.RenovationType.type19.getValue().equals(renovation.getType()))){
+			return PREFIX+"company_dept.html";
+		}
 		return PREFIX+"page3.html";
 	}
 }
