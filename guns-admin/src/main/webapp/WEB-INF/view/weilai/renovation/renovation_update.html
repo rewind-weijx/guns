@@ -28,14 +28,14 @@
 						<label class="col-sm-3 control-label">热点文章</label>
 						<div class="col-sm-9">
 							<select class="form-control" id="hot" name="hot">
-								<option value="0"
-									@if(item.hot==0){
-										checked="checked"
+								<option value="0" 
+									@if(item.hot=='0'){
+										selected="selected"
 									@}
-								>不是</option>
+								>否</option>
 								<option value="1"
-									@if(item.hot==1){
-										checked="checked"
+									@if(item.hot=='1'){
+										selected="selected"
 									@}
 								>是</option>
 							</select>

@@ -63,9 +63,9 @@ window.onload = function(){
 		      },
 		    });
 		    var swiper = new Swiper('#swiper-demo', {
-		      slidesPerView: 4,
+		      slidesPerView: 3,
 		      spaceBetween: 30,
-		      slidesPerGroup: 4,
+		      slidesPerGroup: 3,
 		      loop: true,
 		      pagination: {
 		        el: '#paginationdemo',

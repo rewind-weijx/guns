@@ -18,6 +18,7 @@ import com.weilai.model.Renovation;
 import com.weilai.model.RenovationDetail;
 import com.weilai.service.IRenovationService;
 import com.weilai.util.Constant;
+import com.weilai.warpper.RenovationWarpper;
 
 /**
  * 装修控制器
@@ -91,7 +92,8 @@ public class RenovationController extends BaseController {
     @ResponseBody
     public Object list(Renovation renovation,@PathVariable String type) {
     	renovation.setType(type);
-        return renovationService.selectList(renovation);
+    	List<Renovation> list = renovationService.selectList(renovation);
+        return new RenovationWarpper(list).warp();
     }
 
     /**

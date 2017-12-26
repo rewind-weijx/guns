@@ -20,7 +20,7 @@ Renovation.initColumn = function () {
             {title: '内容', field: 'content', visible: true, align: 'center', valign: 'middle'},
             {title: '图片地址', field: 'image', visible: true, align: 'center', valign: 'middle'},
             {title: '查看次数', field: 'readCount', visible: true, align: 'center', valign: 'middle'},
-            {title: '是否为热点文章', field: 'hot', visible: true, align: 'center', valign: 'middle'},
+            {title: '是否为热点文章', field: 'hotName', visible: true, align: 'center', valign: 'middle'},
             {title: '创建时间', field: 'createTime', visible: true, align: 'center', valign: 'middle'},
             {title: '创建人', field: 'createBy', visible: true, align: 'center', valign: 'middle'}
     ];
