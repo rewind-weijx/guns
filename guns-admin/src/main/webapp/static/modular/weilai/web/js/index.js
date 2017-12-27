@@ -91,7 +91,6 @@ window.onload = function(){
 		        prevEl: '#swiper-button-prev5',
 		      },
 		    });
-		    
 		}else{
 			var swiper = new Swiper('#swiper', {
 			      slidesPerView: 1,
@@ -165,5 +164,17 @@ window.onload = function(){
 			      },
 			    });
 		}
-	
+
+    setInterval(function(){
+		$("#swiper-button-next").click();
+	},3000);
+	setInterval(function(){
+		$("#swiper-button-next-03").click();
+	},3000);
+	setInterval(function(){
+		$("#swiper-button-next-04").click();
+	},3000);
+	setInterval(function(){
+		$("#swiper-button-next-05").click();
+	},3000);
 }
