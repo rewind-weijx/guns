@@ -669,7 +669,7 @@
 							<br>
 						</div>
 					</div>
-					<div class="col-md-9">
+					<div class="col-md-9" style="display: none;">
 					
 					</div>
 				</div>
@@ -974,8 +974,9 @@
 		<script type="text/javascript">
 			$(".company .tool").mouseenter(function(){
 				var index = $(this).attr("index");
-				$(this).parent().next().find(".col-md-9").hide();
-				$(this).parent().next().find(".col-md-9:eq("+index+")").show();
+				console.log(index)
+				$(".company").find(".col-md-9").hide();
+				$(".company").find(".col-md-9:eq("+index+")").show();
 			});
 		</script>
 	</body>
