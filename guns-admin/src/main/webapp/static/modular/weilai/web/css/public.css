@@ -150,3 +150,70 @@ body .swiper-container{
 #swipwe1 .swiper-button-next{
 	top: 44%;
 }
+.information {
+    width: 46px;
+    height: 138px;
+    background-color: #00c1de;
+    color: #FFF;
+    position: fixed;
+    bottom: 205px;
+    right: 10px;
+    z-index: 1000;
+    padding: 40px 10px 10px;
+    font-size: 16px;
+    text-align: center;
+    background-image: url("../images/weixin.png");
+    background-repeat: no-repeat;
+    background-position: center 10px;
+    cursor: default;
+    line-height: 1;
+}
+.information:hover .information_con{
+	display: block;
+}
+
+.information_con {
+    position: absolute;
+    left: -315px;
+    bottom: 0;
+    width: 330px;
+    height: 243px;
+    display: none
+}
+
+.information_con .content {
+    width: 313px;
+    background-color: #FFF;
+    height: 243px;
+    position: relative;
+    padding: 10px 0
+}
+
+.information_con .content li {
+    text-align: left;
+    padding: 14px 0 10px 64px;
+    background-position: 26px 20px
+}
+
+.information_con .content li .tit {
+    color: #454545;
+    font-size: 18px
+}
+
+.information_con .content li .text {
+    color: #747474;
+    font-size: 18px;
+    margin-top: 10px
+}
+
+.information_con .content li.li1 {
+    background-image: url(/web_0.5.0/static/images/shangwu.png)
+}
+
+.information_con .content li.li2 {
+    background-image: url(/web_0.5.0/static/images/tel.png)
+}
+
+.information_con .content li.li3 {
+    background-image: url(/web_0.5.0/static/images/write.png)
+}
