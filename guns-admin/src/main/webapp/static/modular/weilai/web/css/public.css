@@ -1,0 +1,219 @@
+/* 导航部分 */
+.navbar{
+	padding:0;
+	margin:0;
+	background-color: #fff;
+	height: 80px;
+	border: 0;
+
+}
+.navbar .nav{
+	padding:0;
+	background-color: #fff;
+}
+.nav li a{
+	line-height: 80px;
+    padding: 0 15px;
+
+}
+.nav li:hover a{
+	color:#e68a76;
+}
+#nav li ul{
+	position: absolute;
+    top: 79px;
+    width: 100px;
+    color: black;
+    margin-left: 15px;
+    background: #fff;
+    padding:0;
+}
+#nav li ul li{
+	padding:0;
+}
+#nav li ul li a{
+	line-height: 36px;
+	padding-left: 20px;
+	display: block;
+	color:#777;
+	padding-right: 0;
+	font-size: 14px;
+}
+#nav li ul li a:hover{
+	background-color: #efeff0;
+}
+
+.nav li a {
+	font-family: "Open Sans",sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: #444448;
+}
+
+.navbar-default .nav li:hover a,.navbar-default .nav li a:focus{
+	color: #fed136;
+	outline: 0;
+	text-decoration: none;
+}
+
+
+@media (max-width:768px) {
+	.navbar-default .navbar-toggle {
+		background-color: #fed136;
+		border-color: #fed136;
+		margin-top: 20px;
+	} 
+	.nav li a{
+		line-height: 50px;
+	    padding: 0 15px;
+	    font-size: 14px;
+
+	}
+	#nav li ul{
+		position: relative;
+		top:0;
+	}
+
+	 .navbar-default .navbar-toggle .icon-bar {
+		background-color: #fff
+	} 
+	.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {
+		background-color: #fed136
+	}
+}  
+
+
+.team-text{
+	padding-bottom: 20px;
+	overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+.default{
+	color: #EB5A4F;
+}
+.default-bj{
+	color: #fff;
+	background-color: #EB5A4F;
+}
+
+.info-bj{
+	color: #fff;
+	background-color: #B2B3B7;
+}
+.mr10{
+	margin-right: 10px;
+}
+.mr5{
+	margin-right: 5px;
+}
+
+#owl-slider{
+	height: 300px!important;
+}
+#owl-slider .owl-carousel .owl-item img{
+	height: 300px!important;
+}
+
+.row img{
+	cursor: pointer;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+body .swiper-container .swiper-button-prev{
+    left: 0px;
+    top: 116px;
+}
+body .swiper-container .swiper-button-next{
+    right: 0px;
+    top: 116px;
+}
+body .swiper-container{
+	padding: 0 0 0 30px;
+}
+
+#partners .owl-carousel .owl-item img{
+    height: inherit;
+}
+#partners {
+	padding-bottom: 80px;
+}
+#swipwe1 .swiper-button-prev{
+	left: 0px;
+    top: 44%;
+}
+
+#swipwe1 .swiper-button-next{
+	top: 44%;
+}
+.information {
+    width: 46px;
+    height: 138px;
+    background-color: #00c1de;
+    color: #FFF;
+    position: fixed;
+    bottom: 205px;
+    right: 10px;
+    z-index: 1000;
+    padding: 40px 10px 10px;
+    font-size: 16px;
+    text-align: center;
+    background-image: url("../images/weixin.png");
+    background-repeat: no-repeat;
+    background-position: center 10px;
+    cursor: default;
+    line-height: 1;
+}
+.information:hover .information_con{
+	display: block;
+}
+
+.information_con {
+    position: absolute;
+    left: -315px;
+    bottom: 0;
+    width: 330px;
+    height: 243px;
+    display: none
+}
+
+.information_con .content {
+    width: 313px;
+    background-color: #FFF;
+    height: 243px;
+    position: relative;
+    padding: 10px 0
+}
+
+.information_con .content li {
+    text-align: left;
+    padding: 14px 0 10px 64px;
+    background-position: 26px 20px
+}
+
+.information_con .content li .tit {
+    color: #454545;
+    font-size: 18px
+}
+
+.information_con .content li .text {
+    color: #747474;
+    font-size: 18px;
+    margin-top: 10px
+}
+
+.information_con .content li.li1 {
+    background-image: url(/web_0.5.0/static/images/shangwu.png)
+}
+
+.information_con .content li.li2 {
+    background-image: url(/web_0.5.0/static/images/tel.png)
+}
+
+.information_con .content li.li3 {
+    background-image: url(/web_0.5.0/static/images/write.png)
+}

@@ -16,9 +16,80 @@
 		<result column="del_flag" property="delFlag" />
 	</resultMap>
 
+<<<<<<< HEAD
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, type, title, content, image, read_count AS readCount, hot, create_time AS createTime, create_by AS createBy, del_flag AS delFlag
     </sql>
 
+=======
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id, type, title, content, image, read_count AS readCount, hot,
+		create_time AS createTime, create_by AS createBy, del_flag AS delFlag
+	</sql>
+
+	<insert id="insertDetail" parameterType="com.weilai.model.RenovationDetail">
+
+		INSERT INTO renovation_detail
+		(id,
+		renovation_id,
+		title,
+		content,
+		image,
+		create_time,
+		create_by,
+		del_flag
+		)
+		VALUES
+		(
+		#{id},
+		#{renovationId},
+		#{title},
+		#{content},
+		#{image},
+		#{createTime},
+		#{createBy},
+		#{delFlag}
+		);
+
+	</insert>
+<!-- 	<update id="updateById" parameterType="com.weilai.model.Renovation"> -->
+<!-- 		UPDATE guns.renovation  -->
+<!-- 			<set> -->
+<!-- 				<if test="type!=null and type!=''"> -->
+<!-- 					type=#{type}, -->
+<!-- 				</if>	 -->
+				
+<!-- 				<if test="title!=null and title!=''"> -->
+<!-- 					title=#{title}, -->
+<!-- 				</if>	 -->
+				
+<!-- 				<if test="content!=null and content!=''"> -->
+<!-- 					content=#{content}, -->
+<!-- 				</if>	 -->
+				
+<!-- 				<if test="image!=null and image!=''"> -->
+<!-- 					image=#{image}, -->
+<!-- 				</if>	 -->
+				
+<!-- 				<if test="readCount!=null and readCount!=''"> -->
+<!-- 					read_count=#{readCount} -->
+<!-- 				</if>	 -->
+				
+<!-- 				<if test="hot!=null and hot!=''"> -->
+<!-- 					hot=#{hot} -->
+<!-- 				</if>				 -->
+<!-- 			</set> -->
+<!-- 			WHERE -->
+<!-- 			id = 'id' ; -->
+				
+<!-- 	</update> -->
+	<select id="selectDetailList" parameterType="com.weilai.model.RenovationDetail" resultType="com.weilai.model.RenovationDetail">
+		select * from renovation_detail where del_flag=0 and renovation_id=#{renovationId}
+	</select>
+	<delete id="deleteDetail" parameterType="java.lang.String">
+		update renovation_detail set del_flag=1 where renovation_id=#{renovationId}
+	</delete>
+>>>>>>> master
 </mapper>

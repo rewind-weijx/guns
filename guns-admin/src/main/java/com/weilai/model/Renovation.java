@@ -1,11 +1,20 @@
 package com.weilai.model;
 
 import java.io.Serializable;
+<<<<<<< HEAD
 
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
+=======
+import java.util.Date;
+
+import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
+>>>>>>> master
 
 /**
  * <p>
@@ -19,10 +28,15 @@ public class Renovation extends Model<Renovation> {
 
     private static final long serialVersionUID = 1L;
 
+<<<<<<< HEAD
     /**
      * 主键
      */
 	private String id;
+=======
+	@TableId(value="id", type= IdType.INPUT)
+    private String id;
+>>>>>>> master
     /**
      * 装修类型：1：智能家居2：定制木门3：软装部
      */
@@ -65,6 +79,7 @@ public class Renovation extends Model<Renovation> {
 	private String delFlag;
 
 
+<<<<<<< HEAD
 	public String getId() {
 		return id;
 	}
@@ -73,6 +88,8 @@ public class Renovation extends Model<Renovation> {
 		this.id = id;
 	}
 
+=======
+>>>>>>> master
 	public String getType() {
 		return type;
 	}
@@ -146,11 +163,14 @@ public class Renovation extends Model<Renovation> {
 	}
 
 	@Override
+<<<<<<< HEAD
 	protected Serializable pkVal() {
 		return this.id;
 	}
 
 	@Override
+=======
+>>>>>>> master
 	public String toString() {
 		return "Renovation{" +
 			"id=" + id +
@@ -165,4 +185,20 @@ public class Renovation extends Model<Renovation> {
 			", delFlag=" + delFlag +
 			"}";
 	}
+<<<<<<< HEAD
+=======
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	@Override
+	protected Serializable pkVal() {
+		return this.id;
+	}
+>>>>>>> master
 }

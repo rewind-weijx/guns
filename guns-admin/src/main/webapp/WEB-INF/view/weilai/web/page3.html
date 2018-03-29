@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		@include("/common/weilai/_head.html"){}
+		<link rel="stylesheet" type="text/css" href="${ctxPath}/static/modular/weilai/web/css/page2.css">
+	</head>
+	<body id="page-top">
+		<!-- Navigation -->
+		@include("/common/weilai/_nav.html"){}
+		<!-- Header -->
+		<header>
+			<div class="banner">
+				<img src="${ctxPath}/static/modular/weilai/web/images/demo/slider-1.jpg" class="img-responsive" alt="portfolio" width="100%" style="height: 300px;">
+			</div>
+		</header>
+
+
+		<section id="" class="case">
+			<div class="container">
+				<div>
+					<div class="text-center article-detail">
+					
+						<h2 style="text-align: left;margin-bottom: 0px;">${typeName}
+							<span style="font-size: 14px;">Decoration design center</span>
+						</h2>
+						<div style="border-bottom: 2px #a3a2a4 solid; height: 2px;margin-bottom: 30px;">&nbsp</div>
+<!-- 						<p> -->
+							@if(renovation.hot=='1'){
+<!-- 							<span class="mr10"><i class="fa fa-firefox default mr5"></i>热点</span> -->
+							@}
+<!-- 							<span class="mr10"><i class="fa fa-clock-o mr5" aria-hidden="true"></i>${renovation.createTime,'yyyy-MM-dd HH:mm:SS'}</span> -->
+<!-- 							<span class="mr10"><i class="fa fa-eye mr5"></i>访问量：${renovation.readCount}</span> -->
+<!-- 							<span class="type">所属分类：<span class="default">${typeName}</span></span> -->
+<!-- 						</p> -->
+						<p class="text-center">${renovation.title}</p>
+						<p class="text-left"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}${renovation.content}</p>
+					</div>
+				</div>
+				@for(item in list){
+					<div class="row row-0-gutter">
+						<div class="col-md-12 col-0-gutter">
+							<div class="ot-portfolio-item">
+<!-- 								<figure class="effect-bubba"> -->
+									<img src="${item.image}" alt="img02" class="img-responsive"  style="height: 300px;"/>
+<!-- 									<figcaption> -->
+<!-- 										<h2>${item.content}</h2> -->
+<!-- 									</figcaption> -->
+<!-- 								</figure> -->
+								<p>${item.content}</p>
+							</div>
+						</div>
+					</div>
+				@}
+			</div>
+		</section>
+		<section id="" class="case">
+			<div class="container">
+				<div>
+					<div class="text-center article-detail">
+					
+						<h2 style="text-align: left;margin-bottom: 0px;">热门推荐
+							<span style="font-size: 14px;">Decoration design center</span>
+						</h2>
+						<div style="border-bottom: 2px #a3a2a4 solid; height: 2px;margin-bottom: 30px;">&nbsp</div>
+					</div>
+				</div>
+				<div class="row row-0-gutter">
+					@for(item in list){
+						<div class="col-md-3 col-0-gutter">
+							<div class="ot-portfolio-item">
+<!-- 								<figure class="effect-bubba"> -->
+									<img src="${item.image}" alt="img02" class="img-responsive"  style="height: 200px;"/>
+<!-- 									<figcaption> -->
+<!-- 										<h2>${item.content}</h2> -->
+<!-- 									</figcaption> -->
+<!-- 								</figure> -->
+								<p>${item.content}</p>
+							</div>
+						</div>
+					@}
+				</div>
+			</div>
+		</section>
+		<section id="dianping" class="expand">
+			<div class="container">
+<!-- 				<p class="comment">[小编点评] ${renovation.content}</p> -->
+<!-- 				<p >拓展阅读</p> -->
+<!-- 				<p class="hot">金秋装修流行趋势抢先看，简洁北美风将大放异彩</p> -->
+<!-- 				<p>不知不觉救济即将到来，又到了一年最适合装修的季节，现在装修人们已经不仅仅关注房子装修的花费，要关注房子装修的个性，环保，这个季节装修将会流行什么呢？</p> -->
+			</div>
+		</section>
+		<section id="contact" class="dark-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<div class="section-title">
+							<h2>联系我们</h2>
+							<p>如果你有问题或需要帮助！请联系我们！我们为您的企业设计出凉爽整洁的设计。 </p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<div class="section-text">
+							<h4>联系方式</h4>
+							<p>北京亦庄经济开发区国锐金嵿</p>
+							<p><i class="fa fa-phone"></i> 电话：13910800234</p>
+							<p><i class="fa fa-envelope"></i> 邮箱：13910800234\@126.com</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="section-text">
+							<h4>微信二维码</h4>
+							<p><img alt="" src="${ctxPath}/static/modular/weilai/web/images/demo/erweima.png" height="90" /></p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<form name="sentMessage" id="contactForm" method="post" novalidate="" action="${ctxPath}/sendMessage" >
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" class="form-control" maxlength="20" placeholder=" 你的姓名 *" id="name" name="name" required="" data-validation-required-message="请输入你的姓名">
+										<p class="help-block text-danger"></p>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" class="form-control" maxlength="11" placeholder="你的手机 *"  id="mobile" name="mobile" required="" data-validation-required-message="请输入你的手机">
+										<p class="help-block text-danger"></p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<textarea class="form-control" maxlength="200" placeholder="留言 *" id="description" name="description" required="true" data-validation-required-message="Please enter a message."></textarea>
+										<p class="help-block text-danger"></p>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<div id="success"></div>
+									<button type="button" id="sendMessage" class="btn">发送信息</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<p id="back-top">
+			<a href="#top"><i class="fa fa-angle-up"></i></a>
+		</p>
+		@include("/common/weilai/_footer.html"){}
+
+		<!-- Modal for portfolio item 1 -->
+		<div class="modal fade" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="Modal-label-1">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-1">Dean & Letter</h4>
+					</div>
+					<div class="modal-body">
+						<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-1.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal for portfolio item 2 -->
+		<div class="modal fade" id="Modal-2" tabindex="-1" role="dialog" aria-labelledby="Modal-label-2">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-2">Startup Framework</h4>
+					</div>
+					<div class="modal-body">
+						<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-2.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal for portfolio item 3 -->
+		<div class="modal fade" id="Modal-3" tabindex="-1" role="dialog" aria-labelledby="Modal-label-3">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-3">Lamp & Velvet</h4>
+					</div>
+					<div class="modal-body">
+						<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-3.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal for portfolio item 4 -->
+		<div class="modal fade" id="Modal-4" tabindex="-1" role="dialog" aria-labelledby="Modal-label-4">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-4">Smart Name</h4>
+					</div>
+					<div class="modal-body">
+						<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-4.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal for portfolio item 5 -->
+		<div class="modal fade" id="Modal-5" tabindex="-1" role="dialog" aria-labelledby="Modal-label-5">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-5">Fast People</h4>
+					</div>
+					<div class="modal-body">
+						<img src="${ctxPath}/static/modular/weilai/web/images/demo/portfolio-5.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+			================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		@include("/common/weilai/_basic-script.html"){}
+	</body>
+</html>

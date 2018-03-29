@@ -44,7 +44,7 @@ public class LoginController extends BaseController {
     /**
      * 跳转到主页
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String index(Model model) {
         //获取菜单列表
         List<Integer> roleList = ShiroKit.getUser().getRoleList();
@@ -74,7 +74,7 @@ public class LoginController extends BaseController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
         if (ShiroKit.isAuthenticated() || ShiroKit.getUser() != null) {
-            return REDIRECT + "/";
+            return REDIRECT + "/admin";
         } else {
             return "/login.html";
         }
@@ -118,7 +118,7 @@ public class LoginController extends BaseController {
 
         ShiroKit.getSession().setAttribute("sessionFlag", true);
 
-        return REDIRECT + "/";
+        return REDIRECT + "/admin";
     }
 
     /**

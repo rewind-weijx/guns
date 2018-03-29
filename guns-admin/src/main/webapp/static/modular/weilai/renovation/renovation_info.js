@@ -65,6 +65,7 @@ RenovationInfoDlg.addSubmit = function() {
     this.clearData();
     this.collectData();
 
+<<<<<<< HEAD
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/renovation/add", function(data){
         Feng.success("添加成功!");
@@ -81,10 +82,29 @@ RenovationInfoDlg.addSubmit = function() {
  * 提交修改
  */
 RenovationInfoDlg.editSubmit = function() {
+=======
+    $.ajax({
+    	url:Feng.ctxPath + "/renovation/add",
+    	type:"post",
+    	async:false,
+    	dataType:"json",
+    	data:$("#form").serialize(),
+    	success:function(json){
+    		console.log(json.data);
+    		addDetail(json.data);
+    		Feng.success("添加成功!");
+    	    window.parent.Renovation.table.refresh();
+    	    RenovationInfoDlg.close();
+    	}
+    });
+}
+RenovationInfoDlg.updateSubmit = function() {
+>>>>>>> master
 
     this.clearData();
     this.collectData();
 
+<<<<<<< HEAD
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/renovation/update", function(data){
         Feng.success("修改成功!");
@@ -99,4 +119,66 @@ RenovationInfoDlg.editSubmit = function() {
 
 $(function() {
 
+=======
+    $.ajax({
+    	url:Feng.ctxPath + "/renovation/update",
+    	type:"post",
+    	async:false,
+    	dataType:"json",
+    	data:$("#form").serialize(),
+    	success:function(json){
+    		console.log(json.data);
+    		deleteDetail(json.data);
+    		addDetail(json.data);
+    		Feng.success("修改成功!");
+    	    window.parent.Renovation.table.refresh();
+    	    RenovationInfoDlg.close();
+    	}
+    });
+}
+function deleteDetail(renovationId){
+	$.ajax({
+    	url:Feng.ctxPath + "/renovation/deleteDetail",
+    	type:"post",
+    	async:false,
+    	dataType:"json",
+    	data:{
+    		renovationId:renovationId
+    	},
+    	success:function(json){
+    		
+    	}
+    });
+}
+function addDetail(renovationId){
+	var detailContent = $("#form .detailContent");
+	var detailImage = $("#form .detailImage");
+	$.each(detailContent,function(index,contentElement){
+		var content = $(contentElement).val();
+		var image = $(detailImage[index]).val();
+		$.ajax({
+	    	url:Feng.ctxPath + "/renovation/addDetail",
+	    	type:"post",
+	    	async:false,
+	    	dataType:"json",
+	    	data:{
+	    		renovationId:renovationId,
+	    		content:content,
+	    		image:image
+	    	},
+	    	success:function(json){
+	    		
+	    	}
+	    });
+	});
+}
+function addSubmitCallback(){
+	Feng.success("添加成功!");
+    window.parent.Renovation.table.refresh();
+    RenovationInfoDlg.close();
+}
+
+$(function() {
+	  
+>>>>>>> master
 });

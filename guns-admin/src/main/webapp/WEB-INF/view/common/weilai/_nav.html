@@ -1,0 +1,119 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header page-scroll">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand page-scroll" href="#page-top"><img src="${ctxPath}/static/modular/weilai/web/images/logo.png" alt="Sanza theme logo"></a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right" id="nav" >
+				<li class="hidden">
+					<a href="#page-top"></a>
+				</li>
+				<li>
+					<a class="page-scroll" href="${ctxPath}/">首页</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#01">装饰设计</a>
+					<ul class="" style="display:none" >
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/01">室内定制设计案例</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/02">别墅定制设计案例</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/listl/03">写字楼办公室定制设计案例</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/04">酒店会所定制设计案例</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/05">餐饮定制设计案例</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/06">品牌店面定制设计案例</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="page-scroll" href="#02">产品定制</a>
+					<ul class="" style="display:none" >
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/listl/07">橱柜定制</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/08">家具定制</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/09">木门定制</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="page-scroll" href="#03">工程服务</a>
+					<ul class="" style="display:none" >
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/10">保温系列</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/11">瓷砖系列</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/12">水电系列</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/13">防火防潮系列</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="page-scroll" href="#04">智能家居</a>
+					<ul class="" style="display:none" >
+						@for(info in smartHome){
+							<li>
+								<a class="page-scroll" href="${ctxPath}/content/list/${info.id}">${info.title}</a>
+							</li>
+						@}
+					</ul>
+				</li>
+				<li>
+					<a class="page-scroll" href="#05">软装设计</a>
+					<ul class="" style="display:none" >
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/15">家装软装案例</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/16">会所软装案例</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/17">商业软装案例</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="page-scroll" href="#06">公司简介</a>
+					<ul class="" style="display:none" >
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/18">公司简介</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="${ctxPath}/content/list/19">部门简介</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a class="page-scroll" href="#08">联系我们</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>

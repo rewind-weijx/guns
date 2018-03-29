@@ -1,0 +1,149 @@
+@layout("/common/_container.html"){
+<style>
+.hr-line-dashed {
+	border-top: 1px dashed #e7eaec;
+	color: #ffffff;
+	background-color: #ffffff;
+	height: 1px;
+	margin: 20px 0;
+	margin-top: 45px;
+	margin-bottom: 10px;
+}
+</style>
+<div class="ibox float-e-margins">
+	<div class="ibox-content">
+		<div class="form-horizontal">
+			<form action="javascript:;" id="form">
+				<input type="hidden" name="id" id="id" value=""> <input
+					type="hidden" name="type" id="type" value="${type}">
+
+				<div class="row">
+					<div class="form-group col-sm-12">
+						<label class="col-sm-3 control-label">部门名称</label>
+						<div class="col-sm-9">
+							<input class="form-control" id="title" name="title" type="text">
+						</div>
+					</div>
+					<div class="form-group col-sm-12">
+						<label class="col-sm-3 control-label">热点部门</label>
+						<div class="col-sm-9">
+							<select class="form-control" id="hot" name="hot">
+								<option value="0">否</option>
+								<option value="1">是</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-12 form-group">
+						<label class="col-sm-3 control-label"></label>
+						<div class="col-sm-9">
+							<div id="imagePicker">选择图片</div>
+						</div>
+
+					</div>
+					<div class="col-sm-12 form-group">
+						<label class="col-sm-3 control-label"></label>
+						<div class="col-sm-9">
+							<img alt="" src="" id="imageView" style="max-width: 100%"> <input
+								class="form-control" id="image" name="image" type="hidden">
+						</div>
+
+					</div>
+					<div class="form-group col-sm-12">
+						<label class="col-sm-3 control-label">部门简介</label>
+						<div class="col-sm-9">
+							<textarea class="form-control" id="content" name="content" maxlength="200" ></textarea>
+						</div>
+					</div>
+					<div id="detail"></div>
+					<div class="form-group col-sm-12">
+						<div class="col-sm-3">&nbsp;</div>
+						<div class="col-sm-9">
+							<div id="picker">选择图片</div>
+						</div>
+					</div>
+					<div id="list"></div>
+				</div>
+			</form>
+			<div class="row btn-group-m-t">
+				<div class="col-sm-12" style="text-align: right;"><#button
+					btnCss="info" name="提交" id="ensure" icon="fa-check"
+					clickFun="RenovationInfoDlg.addSubmit()"/> <#button btnCss="danger"
+					name="取消" id="cancel" icon="fa-eraser"
+					clickFun="RenovationInfoDlg.close()"/></div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<script
+	src="${ctxPath}/static/modular/weilai/renovation/renovation_info.js"></script>
+<script type="text/javascript">
+	var idIndex = 1;
+	$("body").on("click", ".delete_detail", function() {
+		$(this).parents(".detail").remove();
+	});
+
+	var imageUploader = createWebUploader("imagePicker",function(file, response){
+		var url = Feng.ctxPath + "/kaptcha/" + response;
+		$("#imageView").attr("src",url);
+		$("#image").val(url);
+	});
+	
+	var detailUploader = createWebUploader("picker",function(file, response){
+			var url = Feng.ctxPath + "/kaptcha/" + response;
+			var html = "";
+			html += '<div class="detail">';
+			html += '	<div class="form-group col-sm-12">';
+			html += '		<div class="col-sm-3 control-label"></div>';
+			html += '		<div class="col-sm-9">';
+			html += '			<img alt="" src="' + url
+					+ '" style="max-width:100%;" > ';
+			html += '			<input class="form-control detailImage" name="detailImage" value="'+url+'" type="hidden">';
+			html += '		</div>';
+			html += '		<div class="col-sm-3 control-label"></div>';
+			html += '	</div>';
+			html += '	<div class="form-group col-sm-12">';
+			html += '		<label class="col-sm-3 control-label">描述</label>';
+			html += '		<div class="col-sm-7">';
+			html += '			<textarea class="form-control detailContent" name="detailContent" maxlength="200"></textarea>';
+			html += '		</div>';
+			html += '		<div class="col-sm-2">';
+			html += '			<button type="button" class="btn btn-info delete_detail">删除选项</button>';
+			html += '		</div>';
+			html += '	</div>';
+			html += '</div>';
+			idIndex++;
+			$("#detail").append(html);
+	})
+	
+	function createWebUploader(id,success){
+		var uploader = WebUploader.create({
+			auto : true,
+			// swf文件路径
+			swf : Feng.ctxPath + '/static/css/plugins/webuploader/Uploader.swf',
+			// 文件接收服务端。
+			server : Feng.ctxPath + '/mgr/upload',
+
+			chunked : true, //分片处理  
+
+			chunkSize : 512 * 1024, //每片20M  
+
+			chunkRetry : 2,//如果失败，则不重试  
+
+			threads : 4,//上传并发数。允许同时最大上传进程数。  
+
+			// 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+			resize : false,
+			pick : '#'+id
+		});
+		// 当有文件被添加进队列的时候
+		uploader.on('fileQueued', function(file) {
+		});
+		// 文件上传过程中创建进度条实时显示。
+		uploader.on('uploadProgress',function(file, percentage) {});
+		// 文件上传成功，给info添加文字，标记上传成功。
+		uploader.on('uploadSuccess',success);
+		return uploader;
+	}
+</script>
+@}

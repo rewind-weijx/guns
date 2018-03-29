@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		@include("/common/weilai/_head.html"){}
+		<link rel="stylesheet" type="text/css" href="${ctxPath}/static/modular/weilai/web/css/page2.css">
+	</head>
+	<body id="page-top">
+		<!-- Navigation -->
+		@include("/common/weilai/_nav.html"){}
+		<!-- Header -->
+		<header>
+			<div class="banner">
+				<img src="${ctxPath}/static/modular/weilai/web/images/demo/slider-1.jpg" class="img-responsive" alt="portfolio" width="100%" style="height: 300px;">
+			</div>
+		</header>
+
+		<section id="" class="case">
+			<div class="container">
+				<div>
+					<div class="text-center article-detail">
+					
+						<h2>${renovation.title}</h2>
+						<p>
+							@if(renovation.hot=='1'){
+							<span class="mr10"><i class="fa fa-firefox default mr5"></i>热点</span>
+							@}
+							<span class="mr10"><i class="fa fa-clock-o mr5" aria-hidden="true"></i>${renovation.createTime,'yyyy-MM-dd HH:mm:SS'}</span>
+							<span class="mr10"><i class="fa fa-eye mr5"></i>访问量：${renovation.readCount}</span>
+							<span class="type">所属分类：<span class="default">${typeName}</span></span>
+						</p>
+						<p class="text-left">${renovation.content}</p>
+					</div>
+				</div>
+				@for(item in list){
+					<div class="row row-0-gutter">
+						<div class="col-md-12 col-0-gutter">
+							<div class="col-md-4">
+								<div class="ot-portfolio-item">
+									<img src="${item.image}" alt="img02" class="img-responsive"  style="height: 300px;"/>
+								</div>
+							</div>
+							<div class="col-md-8" style="font-size: 20px; line-height: 35px;" >${item.content}</div>
+						</div>
+					</div>
+				@}
+			</div>
+		</section>
+
+		<p id="back-top">
+			<a href="#top"><i class="fa fa-angle-up"></i></a>
+		</p>
+		@include("/common/weilai/_footer.html"){}
+
+		@include("/common/weilai/_basic-script.html"){}
+	</body>
+</html>
